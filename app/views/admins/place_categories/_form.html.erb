@@ -1,0 +1,32 @@
+<%= form_with(model:[:admins, place_category], local: true) do |form| %>
+  <% if place_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(place_category.errors.count, "error") %> prohibited this place_category from being saved:</h2>
+
+      <ul>
+      <% place_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :place_category_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :place_category_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :banner_image %>
+    <%= form.file_field :banner_image, id: :place_category_banner_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Banner image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listing_categories.each do |listing_category| %>
+      <tr>
+        <td><%= listing_category.name %></td>
+        <td><%= listing_category.description %></td>
+        <td><%= listing_category.banner_image %></td>
+        <td><%= link_to 'Show', admins_listing_category_path(listing_category) %></td>
+        <td><%= link_to 'Edit', edit_admins_listing_category_path(listing_category) %></td>
+        <td><%= link_to 'Destroy', admins_listing_category_path(listing_category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing Category', new_admins_listing_category_path %>

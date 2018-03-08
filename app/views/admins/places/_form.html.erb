@@ -1,0 +1,57 @@
+<%= form_with(model: [:admins, place], local: true) do |form| %>
+  <% if place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+      <ul>
+      <% place.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :place_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :place_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :banner_image %>
+    <%= form.file_field :banner_image, id: :place_banner_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :place_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :place_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country, id: :place_country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zipcode %>
+    <%= form.text_field :zipcode, id: :place_zipcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :place_category_id %>
+    <%= form.select :place_category_id, options_for_select(PlaceCategory.all.collect{ |u| [u.name, u.id] }, (form.object.try(:place_category_id))), {prompt: "Select Place Category"}, {class: "form-control"} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

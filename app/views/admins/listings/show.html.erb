@@ -1,0 +1,94 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @listing.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<p>
+  <strong>Banner image:</strong>
+  <%= @listing.banner_image %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @listing.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @listing.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @listing.country %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @listing.zipcode %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @listing.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @listing.longitude %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @listing.contact %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @listing.email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @listing.website %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @listing.address %>
+</p>
+
+<p>
+  <strong>Fb url:</strong>
+  <%= @listing.fb_url %>
+</p>
+
+<p>
+  <strong>Linkedin url:</strong>
+  <%= @listing.linkedin_url %>
+</p>
+
+<p>
+  <strong>Gplus url:</strong>
+  <%= @listing.gplus_url %>
+</p>
+
+<p>
+  <strong>Twitter url:</strong>
+  <%= @listing.twitter_url %>
+</p>
+
+<p>
+  <strong>Listing category:</strong>
+  <%= @listing.listing_category %>
+</p>
+
+<%= link_to 'Edit', edit_admins_listing_path(@listing) %> |
+<%= link_to 'Back', admins_listings_path %>

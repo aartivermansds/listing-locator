@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @listing_category.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing_category.description %>
+</p>
+
+<p>
+  <strong>Banner image:</strong>
+  <%= @listing_category.banner_image %>
+</p>
+
+<%= link_to 'Edit', edit_admins_listing_category_path(@listing_category) %> |
+<%= link_to 'Back', admins_listing_categories_path %>
