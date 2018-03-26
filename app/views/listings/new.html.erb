@@ -1,5 +1,19 @@
-<h1>New Listing</h1>
+<!-- ================ Start Page Title ======================= -->
+<section class="title-transparent page-title" style="background:url('<%= asset_path("title-bg.jpg")%>');">
+  <div class="container">
+    <div class="title-content">
+      <h1>Add Listing</h1>
+      <div class="breadcrumbs">
+        <a href="#">Home</a>
+        <span class="gt3_breadcrumb_divider"></span>
+        <span class="current">Add Listing</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="clearfix"></div>
+<!-- ================ End Page Title ======================= -->
 
-<%= render 'form', listing: @listing %>
-
-<%= link_to 'Back', listings_path %>
+<!-- ================ Start Add Listing Section ======================= -->
+<%= render "form", listing: @listing %>
+      <!-- ================ End Add Listing Section ======================= -->

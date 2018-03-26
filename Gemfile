@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'geocoder'
 gem 'jquery-rails'
+gem 'devise'
+gem 'activeadmin'
+gem "ckeditor"
+gem 'carrierwave', '~> 1.0'

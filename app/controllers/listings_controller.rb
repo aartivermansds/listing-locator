@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-
+  layout 'listing'
   # GET /listings
   # GET /listings.json
   def index
@@ -15,10 +15,12 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
+    @amenities = Amenity.all
   end
 
   # GET /listings/1/edit
   def edit
+    @amenities = Amenity.all
   end
 
   # POST /listings
@@ -28,6 +30,11 @@ class ListingsController < ApplicationController
 
     respond_to do |format|
       if @listing.save
+        if params[:listing][:amenities].present?
+          params[:listing][:amenities].each do |amenity|
+            @listing.listing_amenities.create(amenity_id: amenity)
+          end
+        end
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
         format.json { render :show, status: :created, location: @listing }
       else
@@ -42,6 +49,20 @@ class ListingsController < ApplicationController
   def update
     respond_to do |format|
       if @listing.update(listing_params)
+        if params[:listing][:amenity_remove].present?
+          id_param_arr = params[:listing][:amenity_remove].map {|i| i.to_i}
+          if @listing.amenities.ids.uniq != id_param_arr
+            diff_arr = @listing.amenities.ids - id_param_arr
+            @listing.listing_amenities.where('amenity_id IN (?)', diff_arr).destroy_all
+          end
+        else
+          @listing.listing_amenities.destroy_all
+        end
+        if params[:listing][:amenities].present?
+          params[:listing][:amenities].each do |amenity|
+            @listing.listing_amenities.create(amenity_id: amenity)
+          end
+        end
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
         format.json { render :show, status: :ok, location: @listing }
       else
