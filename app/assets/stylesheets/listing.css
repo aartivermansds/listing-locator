@@ -13,8 +13,8 @@
  *= require listing/main
  *= require listing/datedropper
  *= require listing/jquery-rating
-*= require listing/jquery.fancybox.min
-*= require listing/timedropper
-*= require listing/css/icofont
-
+ *= require listing/jquery.fancybox.min
+ *= require listing/timedropper
+ *= require listing/css/icofont
+ *= require custom
 */

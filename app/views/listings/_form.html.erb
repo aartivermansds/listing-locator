@@ -1,8 +1,8 @@
 <section>
   <div class="container">
     <div class="col-md-10 col-sm-12 col-md-offset-1 mob-padd-0">
+      <%= form_for @listing do |f| %>
       <!-- General Information -->
-      <%= form_with(model: listing, local: true) do |form| %>
       <% if listing.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
@@ -22,20 +22,20 @@
         </div>          
         <div class="row mrg-r-10 mrg-l-10">
           <div class="col-sm-6">
+            <%= f.text_field :name, id: :listing_name, class: "form-control" %>
             <label>Listing Title</label>
-            <%= form.text_field :name, id: :listing_name, class: "form-control" %>
           </div>
           <div class="col-sm-6">
+            <%= f.select :listing_category_id, options_for_select(listing_category_list, selected: listing.listing_category_id), {include_blank: "Select a category"}, class: "form-control" %>
             <label>Listing Category</label>
-            <%= form.select :listing_category_id, options_for_select(listing_category_list, selected: listing.listing_category_id), {include_blank: "Select a category"}, class: "form-control" %>
           </div>
           <div class="col-sm-6">
+            <%= f.file_field :banner_image %>
             <label>Banner Image</label>
-            <%= form.file_field :banner_image %>
           </div>
           <div class="col-sm-12">
+            <%= f.text_area :description, id: :listing_description, class: "form-control ckeditor" %>
             <label>Description</label>
-            <%= form.text_area :description, id: :listing_description, class: "form-control ckeditor" %>
           </div>
         </div>
       </div>
@@ -49,23 +49,23 @@
         <div class="row mrg-r-10 mrg-l-10">
           <div class="col-sm-6">
             <label>Address</label>
-            <%= form.text_field :address, id: :listing_address, class: "form-control" %>
+            <%= f.text_field :address, id: :listing_address, class: "form-control" %>
           </div>
           <div class="col-sm-6">
             <label>City</label>
-            <%= form.text_field :city, id: :listing_city, class: "form-control" %>
+            <%= f.text_field :city, id: :listing_city, class: "form-control" %>
           </div>
           <div class="col-sm-6">
             <label>State</label>
-            <%= form.text_field :state, id: :listing_state, class: "form-control" %>
+            <%= f.text_field :state, id: :listing_state, class: "form-control" %>
           </div>
           <div class="col-sm-6">
             <label>Country</label>
-            <%= form.text_field :country, id: :listing_country, class: "form-control" %>
+            <%= f.text_field :country, id: :listing_country, class: "form-control" %>
           </div>
           <div class="col-sm-6">
             <label>Zip code</label>
-            <%= form.text_field :zipcode, id: :listing_zipcode, class: "form-control" %>
+            <%= f.text_field :zipcode, id: :listing_zipcode, class: "form-control" %>
           </div>
         </div>
       </div>
@@ -80,37 +80,37 @@
         <div class="row mrg-r-10 mrg-l-10">
           <div class="col-sm-6">
             <label>Contact</label>
-            <%= form.text_field :contact, id: :listing_contact, class: "form-control" %>
+            <%= f.text_field :contact, id: :listing_contact, class: "form-control" %>
           </div>
 
           <div class="col-sm-6">
             <label>Email</label>
-            <%= form.text_field :email, id: :listing_email, class: "form-control" %>
+            <%= f.text_field :email, id: :listing_email, class: "form-control" %>
           </div>
 
           <div class="col-sm-6">
             <label>Website</label>
-            <%= form.text_field :website, id: :listing_website, class: "form-control" %>
+            <%= f.text_field :website, id: :listing_website, class: "form-control" %>
           </div>
 
           <div class="col-sm-6">
             <label><i class="fa fa-facebook mrg-r-5" aria-hidden="true"></i>Facebook Link</label>
-            <%= form.text_field :fb_url, id: :listing_fb_url, class: "form-control" %>
+            <%= f.text_field :fb_url, id: :listing_fb_url, class: "form-control" %>
           </div>
 
           <div class="col-sm-6">
             <label><i class="fa fa-twitter mrg-r-5" aria-hidden="true"></i>Twitter User</label>
-            <%= form.text_field :twitter_url, id: :listing_twitter_url, class: "form-control" %>
+            <%= f.text_field :twitter_url, id: :listing_twitter_url, class: "form-control" %>
           </div>
 
           <div class="col-sm-6">
             <label><i class="fa fa-google-plus mrg-r-5" aria-hidden="true"></i>Google Plus</label>
-            <%= form.text_field :gplus_url, id: :listing_gplus_url, class: "form-control" %>
+            <%= f.text_field :gplus_url, id: :listing_gplus_url, class: "form-control" %>
           </div>
 
           <div class="col-sm-6">
             <label><i class="fa fa-linkedin-square mrg-r-5" aria-hidden="true"></i>Linked In</label>
-            <%= form.text_field :linkedin_url, id: :listing_linkedin_url, class: "form-control" %>
+            <%= f.text_field :linkedin_url, id: :listing_linkedin_url, class: "form-control" %>
           </div>
 
         </div>
@@ -135,20 +135,34 @@
           <% else %>
           <div class="col-sm-4">
             <span class="custom-checkbox d-block">
-              <%= form.check_box(:amenities, {multiple: true}, amenity.id, nil)%>
+              <%= f.check_box(:amenities, {multiple: true}, amenity.id, nil)%>
               <label for="select<%= amenity.id%>"></label>
               <%= amenity.name %>
             </span>
           </div>
           <% end %>
           <% end %>
-
         </div>
 
       </div>
+      <div class="add-listing-box opening-day mrg-bot-25 padd-bot-30 padd-top-25">
+        <div class="listing-box-header">
+          <i class="ti-time theme-cl"></i>
+          <h3>Opening Hours</h3>
+          <p>Write something general information about your listing</p>
+        </div>
+        <div id="working_hours">
+          <%= f.fields_for :working_hours do |working_hour| %>
+          <%= render 'working_hour_fields', f: working_hour %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association 'Add Opening Hours', f, :working_hours, class: "btn theme-btn" %>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="text-center">
-      <%= form.submit "Submit Listing", class: "btn theme-btn" %>
+      <%= f.submit "Submit Listing", class: "btn theme-btn" %>
     </div>
     <% end %>
   </div>

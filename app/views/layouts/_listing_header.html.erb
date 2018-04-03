@@ -8,7 +8,7 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="index.html">
         <%= image_tag "logo-white.png", class: "logo logo-display" %>
-        <%= image_tag "logo.png", class: "logo logo-scrolled" %>1
+        <%= image_tag "logo.png", class: "logo logo-scrolled" %>
       </a>
     </div>
 
@@ -20,9 +20,7 @@
           <a href="login.html" class="dropdown-toggle" data-toggle="dropdown">Explore</a>
           <ul class="dropdown-menu animated fadeOutUp">
             <li><%= link_to "Add Listing", new_listing_path %></li>
-
-            <li><a href="listing-detail.html">Listing Detail</a></li>
-
+            
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listing</a>
               <ul class="dropdown-menu animated fadeOutUp">
@@ -77,22 +75,30 @@
       </ul>
       <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
         <li class="no-pd dropdown">
-          <a href="add-listing.html" class="addlist"><img src="assets/img/avatar.jpg" class="img-responsive img-circle avater-img" alt="" /><strong>Daniel Luke</strong></a>
-          <ul class="dropdown-menu animated navbar-left fadeOutUp">
-            <li><a href="add-listing.html">Add Listing</a></li>
+          <% if user_signed_in? %>
+            <a href="add-listing.html" class="addlist"><img src="assets/img/avatar.jpg" class="img-responsive img-circle avater-img" alt="" /><strong>Daniel Luke</strong></a>
+            <ul class="dropdown-menu animated navbar-left fadeOutUp">
+              <li><a href="add-listing.html">Add Listing</a></li>
 
-            <li><a href="manage-listing.html">Manage Listing</a></li>
+              <li><a href="manage-listing.html">Manage Listing</a></li>
 
-            <li><a href="edit-profile.html">Profile Settings</a></li>
+              <li><a href="edit-profile.html">Profile Settings</a></li>
 
-            <li><a href="profile-detail.html">Profile Detail</a></li>
+              <li><a href="profile-detail.html">Profile Detail</a></li>
 
-            <li><a href="invoice.html">Check Invoice</a></li>
+              <li><a href="invoice.html">Check Invoice</a></li>
 
-            <li><a href="create-pricing.html">Create Pricing</a></li>
+              <li><a href="create-pricing.html">Create Pricing</a></li>
 
-            <li><a href="login.html">Log Out</a></li>
-          </ul>
+              <li><a href="login.html">Log Out</a></li>
+            </ul>
+          <% else %>
+            <li class="no-pd">
+              <%= link_to new_listing_path, class: "addList" do %>
+                <i class="ti-user" aria-hidden="true"></i>Add Listing
+              <% end %>
+            </li>
+          <% end %>
         </li>
       </ul>
     </div>

@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
   layout 'listing'
   # GET /listings
   # GET /listings.json
@@ -16,6 +17,7 @@ class ListingsController < ApplicationController
   def new
     @listing = Listing.new
     @amenities = Amenity.all
+    @working_hours  = WorkingHour.new
   end
 
   # GET /listings/1/edit
@@ -90,6 +92,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:name, :description, :banner_image, :city, :state, :country, :zipcode, :latitude, :longitude, :contact, :email, :website, :address, :fb_url, :linkedin_url, :gplus_url, :twitter_url, :listing_category_id, working_hours_attributes: [:id, :day, :from, :to, :_destroy])
+      params.require(:listing).permit(:name, :description, :banner_image, :city, :state, :country, :zipcode, :latitude, :longitude, :contact, :email, :website, :address, :fb_url, :linkedin_url, :gplus_url, :twitter_url, :listing_category_id, working_hours_attributes: [:id, :listing_id, :day, :from, :to, :_destroy])
     end
-end
+  end

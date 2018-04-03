@@ -59,3 +59,4 @@ gem 'devise'
 gem 'activeadmin'
 gem "ckeditor"
 gem 'carrierwave', '~> 1.0'
+gem "cocoon"

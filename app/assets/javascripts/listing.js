@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require listing/jquery.min
 //= require listing/bootstrap.min
 //= require listing/bootsnav
 //= require listing/viewportchecker
@@ -23,3 +22,4 @@
 //= require listing/timedropper
 //= require listing/util
 //= require ckeditor/init
+//= require cocoon

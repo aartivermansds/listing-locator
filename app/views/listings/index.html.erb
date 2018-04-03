@@ -1,61 +1,92 @@
-<p id="notice"><%= notice %></p>
+<!-- Page Title -->
+<section class="title-transparent page-title" style="background:url('<%= asset_path("title-bg.jpg")%>')";>
+   <div class="container">
+      <div class="title-content">
+         <h1>Full Width Vertical</h1>
+         <div class="breadcrumbs">
+            <a href="#">Home</a>
+            <span class="gt3_breadcrumb_divider"></span>
+            <span class="current">Full Width Vertical</span>
+         </div>
+      </div>
+   </div>
+</section>
+<div class="clearfix"></div>
+<!-- Page Title -->
+<!-- ================ Vertical Listing Style ======================= -->
+<section class="show-case">
+   <div class="container">
+      <div class="row">
+         <% @listings.each do |listing| %>
+         <div class="col-md-12 col-sm-12">
+            <div class="verticleilist listing-shot">
+               <div class="listing-badge now-open">Now Open</div>
+               <%= link_to listing_path(listing), class: "listing-item" do %>
+               <div class="listing-shot-img">
+                  <%= image_tag listing.banner_image_url, class: "img-responsive" if listing.banner_image_url.present? %>
+                  <span class="approve-listing"><i class="fa fa-check"></i></span>
+               </div>
+               <% end %>
+               <div class="verticle-listing-caption">
+                  <span class="like-listing"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                  <div class="listing-shot-caption">
+                     <h4><%= listing.name %></h4>
+                     <p class="listing-description"><%= listing.description.html_safe %></p>
+                  </div>
+                  <div class="listing-shot-info">
+                     <div class="row extra">
+                        <div class="col-md-12">
+                           <div class="listing-detail-info">
+                           <span><i class="fa fa-map-marker" aria-hidden="true"></i><%= listing.address %></span>
+                              <span><i class="fa fa-phone" aria-hidden="true"></i><%= listing.contact %></span>
+                              <span><i class="fa fa-globe" aria-hidden="true"></i><%= listing.website %></span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="listing-shot-info rating">
+                     <div class="row extra">
+                        <div class="col-md-7 col-sm-7 col-xs-6">
+                           <i class="color fa fa-star" aria-hidden="true"></i>
+                           <i class="color fa fa-star" aria-hidden="true"></i>
+                           <i class="color fa fa-star" aria-hidden="true"></i>
+                           <i class="color fa fa-star-half-o" aria-hidden="true"></i>
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                           <span>27 Reviews</span>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-6 pull-right">
+                         <a href="listing-detail.html" class="detail-link">Click Now</a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <% end %>
+    </div>
+ </div>
+ <!-- Start Pagination -->
+ <div class="row">
+   <div class="col-md-12">
+      <div class="bs-example">
+         <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&raquo;</a></li>
+         </ul>
+      </div>
+   </div>
+</div>
+<!-- End Pagination -->
+</div>
+</section>
 
-<h1>Listings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Banner image</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Country</th>
-      <th>Zipcode</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Contact</th>
-      <th>Email</th>
-      <th>Website</th>
-      <th>Address</th>
-      <th>Fb url</th>
-      <th>Linkedin url</th>
-      <th>Gplus url</th>
-      <th>Twitter url</th>
-      <th>Listing category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.name %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.banner_image %></td>
-        <td><%= listing.city %></td>
-        <td><%= listing.state %></td>
-        <td><%= listing.country %></td>
-        <td><%= listing.zipcode %></td>
-        <td><%= listing.latitude %></td>
-        <td><%= listing.longitude %></td>
-        <td><%= listing.contact %></td>
-        <td><%= listing.email %></td>
-        <td><%= listing.website %></td>
-        <td><%= listing.address %></td>
-        <td><%= listing.fb_url %></td>
-        <td><%= listing.linkedin_url %></td>
-        <td><%= listing.gplus_url %></td>
-        <td><%= listing.twitter_url %></td>
-        <td><%= listing.listing_category %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Listing', new_listing_path %>
+

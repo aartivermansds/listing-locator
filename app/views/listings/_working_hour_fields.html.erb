@@ -1,0 +1,32 @@
+
+<div class="nested-fields">
+  <div class="row mrg-r-10 mrg-l-10">
+    <div class="col-sm-12 mob-padd-0">
+      <div class="">
+        <div class="col-md-2">
+          <div class="form-group">
+            <%= f.label :day %><br>
+            <%= f.collection_select :day, WorkingHour::WEEKDAYS, :to_s, :humanize , {class: "form-control"} %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.label :from %><br>
+            <%= f.collection_select :from, WorkingHour::OPENINGTIME, :to_s, :humanize , class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.label :to %><br>
+            <%= f.collection_select :to, WorkingHour::CLOSINGTIME, :to_s, :humanize , class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <%= link_to_remove_association "remove task", f, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
