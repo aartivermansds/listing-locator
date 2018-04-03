@@ -8,10 +8,18 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'home#index'
-  resources :listings
+  resources :listings do
+    collection do
+        post :upload_listing_image
+      end 
+    end
+    delete '/remove_listing_image/:id' => "listings#remove_listing_image"
+  
+
   namespace :admins do 
     resources :amenities
-    resources :listings
+    resources :listings 
+
     resources :listing_categories
     resources :place_categories
     resources :places

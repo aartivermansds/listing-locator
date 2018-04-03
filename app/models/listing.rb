@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
   belongs_to :listing_category, optional: true
-  has_many :images, as: :imageable
+  has_many :images, as: :imageable, dependent: :destroy
   has_many :listing_amenities
   has_many :amenities, through: :listing_amenities
   has_many :working_hours, dependent: :destroy

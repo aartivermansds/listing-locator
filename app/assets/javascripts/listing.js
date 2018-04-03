@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require dropzone
 //= require listing/bootstrap.min
 //= require listing/bootsnav
 //= require listing/viewportchecker

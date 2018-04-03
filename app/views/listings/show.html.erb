@@ -1,21 +1,42 @@
 <!-- ================ Listing Detail Basic Information ======================= -->
 <section class="detail-section" style="background:url('<%= @listing.banner_image.url %>')";>
-   <div class="overlay" style="background-color: rgb(36, 36, 41); opacity: 0.5;"></div>
+   <div class="overlay" style="background-color: rgb(36, 36, 41); opacity: 0.5;">
+   </div>
    <div class="profile-cover-content">
       <div class="container">
          <div class="cover-buttons">
             <ul>
                <li>
-                  <div class="buttons medium button-plain "><i class="fa fa-phone"></i><%= @listing.contact %></div>
+                  <div class="buttons medium button-plain ">
+                     <i class="fa fa-phone"></i>
+                     <%= @listing.contact %>
+                  </div>
                </li>
                <li>
-                  <div class="buttons medium button-plain "><i class="fa fa-map-marker"></i><%= @listing.address %></div>
+                  <div class="buttons medium button-plain ">
+                     <i class="fa fa-map-marker"></i>
+                     <%= @listing.address %>
+                  </div>
                </li>
                <li>
-                  <div class="inside-rating buttons listing-rating theme-btn button-plain"><span class="value">9.7</span> <sup class="out-of">/10</sup></div>
+                  <div class="inside-rating buttons listing-rating theme-btn button-plain">
+                     <span class="value">9.7</span> 
+                     <sup class="out-of">/10</sup>
+                  </div>
                </li>
-               <li><a href="#add-review" class="buttons btn-outlined medium add-review"><i class="fa fa-comments-o"></i><span class="hidden-xs">Add review</span></a></li>
-               <li><a href="#" data-listing-id="74" data-nonce="01a769d424" class="buttons btn-outlined"><i class="fa fa-heart-o"></i><span class="hidden-xs">Bookmark</span> </a></li>
+               <li>
+                  <a href="#add-review" class="buttons btn-outlined medium add-review">
+                  <i class="fa fa-comments-o"></i>
+                  <span class="hidden-xs">Add review</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#" data-listing-id="74" data-nonce="01a769d424" class="buttons btn-outlined">
+                  <i class="fa fa-heart-o">
+                  </i>
+                  <span class="hidden-xs">Bookmark</span> 
+                  </a>
+               </li>
             </ul>
          </div>
          <div class="listing-owner hidden-xs hidden-sm">
@@ -43,8 +64,8 @@
                      <h3><%= @listing.name %> <span class="mrg-l-5 category-tag"><%= @listing.listing_category.try(:name) %></span></h3>
                      <div>
                         <a href="#listing-location" class="listing-address">
-                           <i class="ti-location-pin mrg-r-5"></i>
-                           <%= @listing.full_address %>
+                        <i class="ti-location-pin mrg-r-5"></i>
+                        <%= @listing.full_address %>
                         </a>
                         <div class="rating-box">
                            <div class="detail-list-rating">
@@ -246,15 +267,15 @@
                            <label>Adult</label>
                            <div class="input-group">
                               <span class="input-group-btn">
-                                 <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                                    <i class="fa fa-minus"></i>
-                                 </button>
+                              <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                              <i class="fa fa-minus"></i>
+                              </button>
                               </span>
                               <input type="text" name="quant[1]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
                               <span class="input-group-btn">
-                                 <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[1]">
-                                    <i class="fa fa-plus"></i>
-                                 </button>
+                              <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[1]">
+                              <i class="fa fa-plus"></i>
+                              </button>
                               </span>
                            </div>
                         </div>
@@ -262,15 +283,15 @@
                            <label>Children</label>
                            <div class="input-group">
                               <span class="input-group-btn">
-                                 <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[2]">
-                                    <i class="fa fa-minus"></i>
-                                 </button>
+                              <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[2]">
+                              <i class="fa fa-minus"></i>
+                              </button>
                               </span>
                               <input type="text" name="quant[2]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
                               <span class="input-group-btn">
-                                 <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[2]">
-                                    <i class="fa fa-plus"></i>
-                                 </button>
+                              <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[2]">
+                              <i class="fa fa-plus"></i>
+                              </button>
                               </span>
                            </div>
                         </div>
@@ -305,32 +326,32 @@
                         <ul class="gallery-list">
                            <li>
                               <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                                 <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" />
+                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" />
                               </a>
                            </li>
                            <li>
                               <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                                 <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
+                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
                               </a>
                            </li>
                            <li>
                               <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                                 <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
+                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
                               </a>
                            </li>
                            <li>
                               <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                                 <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
+                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
                               </a>
                            </li>
                            <li>
                               <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                                 <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
+                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
                               </a>
                            </li>
                            <li>
                               <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                                 <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
+                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
                               </a>
                            </li>
                         </ul>
@@ -346,58 +367,22 @@
                   <div class="widget-boxed-body padd-top-5">
                      <div class="side-list">
                         <ul class="listing-list">
-                           <li>
+                          <% @latest_listings.each do |latest_listing| %>
+                            <li>
                               <a href="#">
-                                 <div class="listing-list-img">
-                                    <%= image_tag "image-3.jpg", class: "img-responsive" %>
-                                 </div>
+                                <div class="listing-list-img">
+                                  <%= image_tag latest_listing.banner_image_url, class: "img-responsive" if latest_listing.banner_image_url.present? %>
+                                </div>
+                                <!-- <div class="listing-list-info">
+                                  <h5><a href="#" title="Listing"><%#= latest_listing.name.upcase %></a></h5>
+                                  <div class="listing-post-meta">
+                                    <span class="updated"><%#= latest_listing.created_at.strftime("%b %d, %Y") %></span> | <a href="#" rel="tag"><%#= latest_listing.listing_category
+                                    .name.upcase %></a>          
+                                  </div>
+                                </div> -->
                               </a>
-                              <div class="listing-list-info">
-                                 <h5><a href="#" title="Listing">Freel Documentry</a></h5>
-                                 <div class="listing-post-meta">
-                                    <span class="updated">Nov 26, 2017</span> | <a href="#" rel="tag">Documentry</a>          
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <a href="#">
-                                 <div class="listing-list-img">
-                                    <%= image_tag "image-3.jpg", class: "img-responsive" %>
-                                 </div>
-                              </a>
-                              <div class="listing-list-info">
-                                 <h5><a href="#" title="Listing">Preez Food Rock</a></h5>
-                                 <div class="listing-post-meta">
-                                    <span class="updated">Oct 10, 2017</span> | <a href="#" rel="tag">Food</a>          
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <a href="#">
-                                 <div class="listing-list-img">
-                                    <%= image_tag "image-3.jpg", class: "img-responsive" %>
-                                 </div>
-                              </a>
-                              <div class="listing-list-info">
-                                 <h5><a href="#" title="Listing">Cricket Buzz High</a></h5>
-                                 <div class="listing-post-meta">
-                                    <span class="updated">Oct 07, 2017</span> | <a href="#" rel="tag">Sport</a>         
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <a href="#">
-                                 <div class="listing-list-img">
-                                    <%= image_tag "image-3.jpg", class: "img-responsive" %>
-                                 </div>
-                              </a>
-                              <div class="listing-list-info">
-                                 <h5><a href="#" title="Listing">Tour travel Tick</a></h5>
-                                 <div class="listing-post-meta">
-                                    <span class="updated">Sep 27, 2017</span> | <a href="#" rel="tag">Travel</a>          
-                                 </div>
-                              </div>
-                           </li>
+                            </li>
+                          <% end %>
                         </ul>
                      </div>
                   </div>
@@ -437,7 +422,8 @@
                         </ul>
                         <h5>Share Listing</h5>
                         <ul class="side-list-inline no-border social-side">
-                           <li><a href="#"><i class="fa fa-facebook theme-cl"></i></a></li>
+                           <li><a href="#"><i class="fa fa-facebook theme-cl"></i></a>
+                           </li>
                            <li><a href="#"><i class="fa fa-google-plus theme-cl"></i></a></li>
                            <li><a href="#"><i class="fa fa-twitter theme-cl"></i></a></li>
                            <li><a href="#"><i class="fa fa-linkedin theme-cl"></i></a></li>
@@ -446,13 +432,24 @@
                      </div>
                   </div>
                </div>
-               <!-- End: Listing Location -->
             </div>
+            <!-- End: Listing Location -->
          </div>
-         <!-- End: Sidebar Start -->
       </div>
+      <!-- End: Sidebar Start -->
+   </div>
    </div>
 </section>
+<div>
+<%= form_for :upload_images, url: :upload_listing_image_listings,  html: { multipart: true, class: "dropzone"} do |f|  %>
+
+  <%= f.hidden_field :listing_id, value:  @listing.id %>
+    <div class="fallback">
+      <%= f.file_field :image %><br>
+      <%= f.submit "Upload" %>
+    </div>
+<% end %>
+</div>
 <!-- Google-map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
 <script src="assets/js/gmap3.min.js"></script>
@@ -465,55 +462,88 @@
       mapTypeControl: true,
       mapTypeControlOptions: {
        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-    },
-    mapTypeId: "style1",
-    mapTypeControlOptions: {
+     },
+     mapTypeId: "style1",
+     mapTypeControlOptions: {
        mapTypeIds: [google.maps.MapTypeId.ROADMAP, "style1"]
-    },
-    navigationControl: true,
-    scrollwheel: false,
-    streetViewControl: true
- }
-},
-marker: {
-  latLng: [<%= @listing.latitude %>, <%= @listing.longitude %>],
-  options: {animation:google.maps.Animation.BOUNCE, icon: '<%= asset_path("marker.png")%>' }
-},
-styledmaptype: {
-  id: "style1",
-  options: {
-   name: "Style 1"
-},
-
-}
-});
+     },
+     navigationControl: true,
+     scrollwheel: false,
+     streetViewControl: true
+   }
+   },
+   marker: {
+    latLng: [<%= @listing.latitude %>, <%= @listing.longitude %>],
+    options: {animation:google.maps.Animation.BOUNCE, icon: '<%= asset_path("marker.png")%>' }
+   },
+   styledmaptype: {
+    id: "style1",
+    options: {
+     name: "Style 1"
+   },
+   
+   }
+   });
    
 </script>
 <script type="text/javascript">
    $("[data-fancybox]").fancybox({
-           // Options will go here
-        });
+             // Options will go here
+           });
    
-     </script>
-     <!-- Date Dropper Script-->
-     <script>
-      $('#reservation-date').dateDropper();
-   </script>
-   <!-- Time Dropper Script-->
-   <script>
-      this.$('#reservation-time').timeDropper({
-       setCurrentTime: false,
-       meridians: true,
-       primaryColor: "#e8212a",
-       borderColor: "#e8212a",
-       minutesInterval: '15'
-    });
- </script>
- <!-- Rating Script -->
- <script>
+         
+</script>
+<!-- Date Dropper Script-->
+<script>
+   $('#reservation-date').dateDropper();
+</script>
+<!-- Time Dropper Script-->
+<script>
+   this.$('#reservation-time').timeDropper({
+    setCurrentTime: false,
+    meridians: true,
+    primaryColor: "#e8212a",
+    borderColor: "#e8212a",
+    minutesInterval: '15'
+   });
+</script>
+<!-- Rating Script -->
+<script>
    $('.rating-opt').start(function(cur){
      console.log(cur);
      $('#info').text(cur);
-  });
+   });
 </script>
 </div>
+
+<style type="text/css">
+  .listing-list-img img {
+    height:100px;
+  }
+</style>
+<script type="text/javascript">
+    $(function () {
+    $(".dropzone").dropzone({
+    
+      paramName: 'upload[image]',
+      addRemoveLinks: true,
+      success: function(file, response) {
+        $(file.previewElement).find('.dz-remove').attr('id', response.id);
+        $(file.previewElement).addClass('dz-success');
+      },
+      removedfile: function(file) {
+        var id = $(file.previewTemplate).find('.dz-remove').attr('id');
+        $.ajax({
+          type: 'DELETE',
+          url: "/remove_listing_image/" + id,
+          success: function(data) {
+            console.log(data.message);
+          }
+        });
+        var previewElement;
+        return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
+      },
+    });
+  });
+  </script>
+© 2018

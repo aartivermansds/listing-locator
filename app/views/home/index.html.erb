@@ -88,7 +88,7 @@
           <a href="listing-detail.html">
             <%= link_to listing_path(listing), class: "listing-item" do %>
             <div class="listing-shot-img">
-              <%= image_tag listing.banner_image_url, class: "img-responsive" if listing.banner_image_url.present? %>
+              <%= image_tag listing.banner_image_url, class: "img-responsive" , style: "height:200px;width:100%;" if listing.banner_image_url.present? %>
               <span class="like-listing"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
             </div>
             <% end %>
@@ -127,7 +127,6 @@
     </div>
   </div>
 </section>
-
 <!-- End Popular Listing Section -->
 
 <!-- Features Section -->
