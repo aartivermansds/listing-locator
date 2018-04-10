@@ -10,6 +10,7 @@ class Admins::PlaceCategoriesController < ApplicationController
   # GET /place_categories/1
   # GET /place_categories/1.json
   def show
+     @place = Place.includes(:place_category).find(params[:id])
   end
 
   # GET /place_categories/new

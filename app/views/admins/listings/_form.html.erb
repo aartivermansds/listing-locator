@@ -1,97 +1,97 @@
 <%= form_with(model: [:admins, listing], local: true) do |form| %>
-  <% if listing.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+<% if listing.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
 
-      <ul>
-      <% listing.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% listing.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :listing_name %>
-  </div>
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name, id: :listing_name %>
+</div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :listing_description %>
-  </div>
+<div class="field">
+  <%= form.label :description %>
+  <%= form.text_area :description, id: :listing_description %>
+</div>
 
-  <div class="field">
-    <%= form.label :banner_image %>
-    <%= form.text_field :banner_image, id: :listing_banner_image %>
-  </div>
+<div class="field">
+  <%= form.label :banner_image %>
+  <%= form.text_field :banner_image, id: :listing_banner_image %>
+</div>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city, id: :listing_city %>
-  </div>
+<div class="field">
+  <%= form.label :city %>
+  <%= form.text_field :city, id: :listing_city %>
+</div>
 
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state, id: :listing_state %>
-  </div>
+<div class="field">
+  <%= form.label :state %>
+  <%= form.text_field :state, id: :listing_state %>
+</div>
 
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country, id: :listing_country %>
-  </div>
+<div class="field">
+  <%= form.label :country %>
+  <%= form.text_field :country, id: :listing_country %>
+</div>
 
-  <div class="field">
-    <%= form.label :zipcode %>
-    <%= form.text_field :zipcode, id: :listing_zipcode %>
-  </div>
+<div class="field">
+  <%= form.label :zipcode %>
+  <%= form.text_field :zipcode, id: :listing_zipcode %>
+</div>
 
-  <div class="field">
-    <%= form.label :contact %>
-    <%= form.text_field :contact, id: :listing_contact %>
-  </div>
+<div class="field">
+  <%= form.label :contact %>
+  <%= form.text_field :contact, id: :listing_contact %>
+</div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :listing_email %>
-  </div>
+<div class="field">
+  <%= form.label :email %>
+  <%= form.text_field :email, id: :listing_email %>
+</div>
 
-  <div class="field">
-    <%= form.label :website %>
-    <%= form.text_field :website, id: :listing_website %>
-  </div>
+<div class="field">
+  <%= form.label :website %>
+  <%= form.text_field :website, id: :listing_website %>
+</div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :listing_address %>
-  </div>
+<div class="field">
+  <%= form.label :address %>
+  <%= form.text_field :address, id: :listing_address %>
+</div>
 
-  <div class="field">
-    <%= form.label :fb_url %>
-    <%= form.text_field :fb_url, id: :listing_fb_url %>
-  </div>
+<div class="field">
+  <%= form.label :fb_url %>
+  <%= form.text_field :fb_url, id: :listing_fb_url %>
+</div>
 
-  <div class="field">
-    <%= form.label :linkedin_url %>
-    <%= form.text_field :linkedin_url, id: :listing_linkedin_url %>
-  </div>
+<div class="field">
+  <%= form.label :linkedin_url %>
+  <%= form.text_field :linkedin_url, id: :listing_linkedin_url %>
+</div>
 
-  <div class="field">
-    <%= form.label :gplus_url %>
-    <%= form.text_field :gplus_url, id: :listing_gplus_url %>
-  </div>
+<div class="field">
+  <%= form.label :gplus_url %>
+  <%= form.text_field :gplus_url, id: :listing_gplus_url %>
+</div>
 
-  <div class="field">
-    <%= form.label :twitter_url %>
-    <%= form.text_field :twitter_url, id: :listing_twitter_url %>
-  </div>
+<div class="field">
+  <%= form.label :twitter_url %>
+  <%= form.text_field :twitter_url, id: :listing_twitter_url %>
+</div>
 
-  <div class="field">
-    <%= form.label :listing_category_id %>
-    <%= form.select :listing_category_id, options_for_select(ListingCategory.all.collect{ |u| [u.name, u.id] }, (form.object.try(:listing_category_id))), {prompt: "Select Listing Category"}, {} %>
-  </div>
+<div class="field">
+  <%= form.label :listing_category_id %>
+  <%= form.select :listing_category_id, options_for_select(ListingCategory.all.collect{ |u| [u.name, u.id] }, (form.object.try(:listing_category_id))), {prompt: "Select Listing Category"}, {} %>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="actions">
+  <%= form.submit %>
+</div>
 <% end %>

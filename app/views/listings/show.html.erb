@@ -26,15 +26,15 @@
                </li>
                <li>
                   <a href="#add-review" class="buttons btn-outlined medium add-review">
-                  <i class="fa fa-comments-o"></i>
-                  <span class="hidden-xs">Add review</span>
+                     <i class="fa fa-comments-o"></i>
+                     <span class="hidden-xs">Add review</span>
                   </a>
                </li>
                <li>
                   <a href="#" data-listing-id="74" data-nonce="01a769d424" class="buttons btn-outlined">
-                  <i class="fa fa-heart-o">
-                  </i>
-                  <span class="hidden-xs">Bookmark</span> 
+                     <i class="fa fa-heart-o">
+                     </i>
+                     <span class="hidden-xs">Bookmark</span> 
                   </a>
                </li>
             </ul>
@@ -64,8 +64,8 @@
                      <h3><%= @listing.name %> <span class="mrg-l-5 category-tag"><%= @listing.listing_category.try(:name) %></span></h3>
                      <div>
                         <a href="#listing-location" class="listing-address">
-                        <i class="ti-location-pin mrg-r-5"></i>
-                        <%= @listing.full_address %>
+                           <i class="ti-location-pin mrg-r-5"></i>
+                           <%= @listing.full_address %>
                         </a>
                         <div class="rating-box">
                            <div class="detail-list-rating">
@@ -267,15 +267,15 @@
                            <label>Adult</label>
                            <div class="input-group">
                               <span class="input-group-btn">
-                              <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                              <i class="fa fa-minus"></i>
-                              </button>
+                                 <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                    <i class="fa fa-minus"></i>
+                                 </button>
                               </span>
                               <input type="text" name="quant[1]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
                               <span class="input-group-btn">
-                              <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[1]">
-                              <i class="fa fa-plus"></i>
-                              </button>
+                                 <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[1]">
+                                    <i class="fa fa-plus"></i>
+                                 </button>
                               </span>
                            </div>
                         </div>
@@ -283,15 +283,15 @@
                            <label>Children</label>
                            <div class="input-group">
                               <span class="input-group-btn">
-                              <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[2]">
-                              <i class="fa fa-minus"></i>
-                              </button>
+                                 <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[2]">
+                                    <i class="fa fa-minus"></i>
+                                 </button>
                               </span>
                               <input type="text" name="quant[2]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
                               <span class="input-group-btn">
-                              <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[2]">
-                              <i class="fa fa-plus"></i>
-                              </button>
+                                 <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[2]">
+                                    <i class="fa fa-plus"></i>
+                                 </button>
                               </span>
                            </div>
                         </div>
@@ -324,36 +324,13 @@
                   <div class="widget-boxed-body">
                      <div class="side-list no-border gallery-box">
                         <ul class="gallery-list">
+                           <% @listing.images.each do |image| %>
                            <li>
-                              <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" />
-                              </a>
+                              <%= link_to image.image_url, "data-fancybox" => "gallery" do %>
+                              <%= image_tag image.image_url, class: "img-responsive" %>
+                              <% end %>
                            </li>
-                           <li>
-                              <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
-                              </a>
-                           </li>
-                           <li>
-                              <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
-                              </a>
-                           </li>
-                           <li>
-                              <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
-                              </a>
-                           </li>
-                           <li>
-                              <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
-                              </a>
-                           </li>
-                           <li>
-                              <a data-fancybox="gallery" href="assets/img/slider-2.jpg">
-                              <img src="assets/img/slider-2.jpg" class="img-responsive" alt="" >
-                              </a>
-                           </li>
+                           <% end %>
                         </ul>
                      </div>
                   </div>
@@ -367,183 +344,150 @@
                   <div class="widget-boxed-body padd-top-5">
                      <div class="side-list">
                         <ul class="listing-list">
-                          <% @latest_listings.each do |latest_listing| %>
-                            <li>
+                           <% @latest_listings.each do |latest_listing| %>
+                           <li>
                               <a href="#">
-                                <div class="listing-list-img">
-                                  <%= image_tag latest_listing.banner_image_url, class: "img-responsive" if latest_listing.banner_image_url.present? %>
-                                </div>
-                                <!-- <div class="listing-list-info">
-                                  <h5><a href="#" title="Listing"><%#= latest_listing.name.upcase %></a></h5>
-                                  <div class="listing-post-meta">
-                                    <span class="updated"><%#= latest_listing.created_at.strftime("%b %d, %Y") %></span> | <a href="#" rel="tag"><%#= latest_listing.listing_category
-                                    .name.upcase %></a>          
-                                  </div>
-                                </div> -->
-                              </a>
-                            </li>
-                          <% end %>
-                        </ul>
+                                 <div class="listing-list-img">
+                                    <%= image_tag latest_listing.banner_image_url, class: "img-responsive" if latest_listing.banner_image_url.present? %>
+                                 </div>
+                                 <div class="listing-list-info">
+                                    <h5>
+                                       <a href="#" title="Listing"><%= latest_listing.name.upcase %></a></h5>
+                                       <div class="listing-post-meta">
+                                          <span class="updated"><%= latest_listing.created_at.strftime("%b %d, %Y") %></span> | <a href="#" rel="tag"><%= latest_listing.listing_category
+                                          .try(:name) %></a>          
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <% end %>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- End: Latest Listing -->
+                  <!-- Start: Listing Category -->
+                  <div class="widget-boxed">
+                     <div class="widget-boxed-header">
+                        <h4><i class="ti-briefcase padd-r-10"></i>Top Categories</h4>
+                     </div>
+                     <div class="widget-boxed-body padd-top-10 padd-bot-0">
+                        <div class="side-list">
+                           <ul class="category-list">
+                              <li><a href="#">Business <span class="badge bg-g">4</span></a></li>
+                              <li><a href="#">Shopping <span class="badge bg-a">7</span></a></li>
+                              <li><a href="#">Photography <span class="badge bg-d">10</span></a></li>
+                              <li><a href="#">Intertainment <span class="badge bg-l">55</span></a></li>
+                              <li><a href="#">Education <span class="badge bg-o">8</span></a></li>
+                              <li><a href="#">Travel & Tour <span class="badge bg-y">17</span></a></li>
+                              <li><a href="#">Health & Fitness <span class="badge bg-s">9</span></a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- End: Listing Category -->
+                  <!-- Start: Listing Location -->
+                  <div class="widget-boxed">
+                     <div class="widget-boxed-header">
+                        <h4><i class="ti-location-pin padd-r-10"></i>Location</h4>
+                     </div>
+                     <div class="widget-boxed-body">
+                        <div class="side-list no-border">
+                           <ul>
+                              <li><i class="ti-location-pin padd-r-10"></i>171 Greenwich St QCH7</li>
+                              <li><i class="ti-mobile padd-r-10"></i>91 234 567 8765</li>
+                              <li><i class="ti-email padd-r-10"></i>suppoer@listinghub.com</li>
+                           </ul>
+                           <h5>Share Listing</h5>
+                           <ul class="side-list-inline no-border social-side">
+                              <li><a href="#"><i class="fa fa-facebook theme-cl"></i></a>
+                              </li>
+                              <li><a href="#"><i class="fa fa-google-plus theme-cl"></i></a></li>
+                              <li><a href="#"><i class="fa fa-twitter theme-cl"></i></a></li>
+                              <li><a href="#"><i class="fa fa-linkedin theme-cl"></i></a></li>
+                              <li><a href="#"><i class="fa fa-pinterest theme-cl"></i></a></li>
+                           </ul>
+                        </div>
                      </div>
                   </div>
                </div>
-               <!-- End: Latest Listing -->
-               <!-- Start: Listing Category -->
-               <div class="widget-boxed">
-                  <div class="widget-boxed-header">
-                     <h4><i class="ti-briefcase padd-r-10"></i>Top Categories</h4>
-                  </div>
-                  <div class="widget-boxed-body padd-top-10 padd-bot-0">
-                     <div class="side-list">
-                        <ul class="category-list">
-                           <li><a href="#">Business <span class="badge bg-g">4</span></a></li>
-                           <li><a href="#">Shopping <span class="badge bg-a">7</span></a></li>
-                           <li><a href="#">Photography <span class="badge bg-d">10</span></a></li>
-                           <li><a href="#">Intertainment <span class="badge bg-l">55</span></a></li>
-                           <li><a href="#">Education <span class="badge bg-o">8</span></a></li>
-                           <li><a href="#">Travel & Tour <span class="badge bg-y">17</span></a></li>
-                           <li><a href="#">Health & Fitness <span class="badge bg-s">9</span></a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-               <!-- End: Listing Category -->
-               <!-- Start: Listing Location -->
-               <div class="widget-boxed">
-                  <div class="widget-boxed-header">
-                     <h4><i class="ti-location-pin padd-r-10"></i>Location</h4>
-                  </div>
-                  <div class="widget-boxed-body">
-                     <div class="side-list no-border">
-                        <ul>
-                           <li><i class="ti-location-pin padd-r-10"></i>171 Greenwich St QCH7</li>
-                           <li><i class="ti-mobile padd-r-10"></i>91 234 567 8765</li>
-                           <li><i class="ti-email padd-r-10"></i>suppoer@listinghub.com</li>
-                        </ul>
-                        <h5>Share Listing</h5>
-                        <ul class="side-list-inline no-border social-side">
-                           <li><a href="#"><i class="fa fa-facebook theme-cl"></i></a>
-                           </li>
-                           <li><a href="#"><i class="fa fa-google-plus theme-cl"></i></a></li>
-                           <li><a href="#"><i class="fa fa-twitter theme-cl"></i></a></li>
-                           <li><a href="#"><i class="fa fa-linkedin theme-cl"></i></a></li>
-                           <li><a href="#"><i class="fa fa-pinterest theme-cl"></i></a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
+               <!-- End: Listing Location -->
             </div>
-            <!-- End: Listing Location -->
          </div>
+         <!-- End: Sidebar Start -->
       </div>
-      <!-- End: Sidebar Start -->
-   </div>
    </div>
 </section>
 <div>
-<%= form_for :upload_images, url: :upload_listing_image_listings,  html: { multipart: true, class: "dropzone"} do |f|  %>
-
-  <%= f.hidden_field :listing_id, value:  @listing.id %>
-    <div class="fallback">
-      <%= f.file_field :image %><br>
-      <%= f.submit "Upload" %>
-    </div>
-<% end %>
 </div>
 <!-- Google-map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
 <script src="assets/js/gmap3.min.js"></script>
 <script type="text/javascript">
    $('#map_full_width_one').gmap3({
-    map: {
+     map: {
+       options: {
+         zoom: 5,
+         center: [<%= @listing.latitude %>, <%= @listing.longitude %>],
+         mapTypeControl: true,
+         mapTypeControlOptions: {
+           style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+        },
+        mapTypeId: "style1",
+        mapTypeControlOptions: {
+           mapTypeIds: [google.maps.MapTypeId.ROADMAP, "style1"]
+        },
+        navigationControl: true,
+        scrollwheel: false,
+        streetViewControl: true
+     }
+  },
+  marker: {
+     latLng: [<%= @listing.latitude %>, <%= @listing.longitude %>],
+     options: {animation:google.maps.Animation.BOUNCE, icon: '<%= asset_path("marker.png")%>' }
+  },
+  styledmaptype: {
+     id: "style1",
      options: {
-      zoom: 5,
-      center: [<%= @listing.latitude %>, <%= @listing.longitude %>],
-      mapTypeControl: true,
-      mapTypeControlOptions: {
-       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-     },
-     mapTypeId: "style1",
-     mapTypeControlOptions: {
-       mapTypeIds: [google.maps.MapTypeId.ROADMAP, "style1"]
-     },
-     navigationControl: true,
-     scrollwheel: false,
-     streetViewControl: true
-   }
-   },
-   marker: {
-    latLng: [<%= @listing.latitude %>, <%= @listing.longitude %>],
-    options: {animation:google.maps.Animation.BOUNCE, icon: '<%= asset_path("marker.png")%>' }
-   },
-   styledmaptype: {
-    id: "style1",
-    options: {
-     name: "Style 1"
-   },
-   
-   }
-   });
+       name: "Style 1"
+    },
+
+ }
+});
    
 </script>
 <script type="text/javascript">
    $("[data-fancybox]").fancybox({
              // Options will go here
-           });
+          });
    
-         
-</script>
-<!-- Date Dropper Script-->
-<script>
-   $('#reservation-date').dateDropper();
-</script>
-<!-- Time Dropper Script-->
-<script>
-   this.$('#reservation-time').timeDropper({
-    setCurrentTime: false,
-    meridians: true,
-    primaryColor: "#e8212a",
-    borderColor: "#e8212a",
-    minutesInterval: '15'
-   });
-</script>
-<!-- Rating Script -->
-<script>
-   $('.rating-opt').start(function(cur){
-     console.log(cur);
-     $('#info').text(cur);
-   });
-</script>
-</div>
-
-<style type="text/css">
-  .listing-list-img img {
-    height:100px;
-  }
-</style>
-<script type="text/javascript">
-    $(function () {
-    $(".dropzone").dropzone({
-    
-      paramName: 'upload[image]',
-      addRemoveLinks: true,
-      success: function(file, response) {
-        $(file.previewElement).find('.dz-remove').attr('id', response.id);
-        $(file.previewElement).addClass('dz-success');
-      },
-      removedfile: function(file) {
-        var id = $(file.previewTemplate).find('.dz-remove').attr('id');
-        $.ajax({
-          type: 'DELETE',
-          url: "/remove_listing_image/" + id,
-          success: function(data) {
-            console.log(data.message);
-          }
+   
+   
+       </script>
+       <!-- Date Dropper Script-->
+       <script>
+         $('#reservation-date').dateDropper();
+      </script>
+      <!-- Time Dropper Script-->
+      <script>
+         this.$('#reservation-time').timeDropper({
+           setCurrentTime: false,
+           meridians: true,
+           primaryColor: "#e8212a",
+           borderColor: "#e8212a",
+           minutesInterval: '15'
         });
-        var previewElement;
-        return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
-      },
+     </script>
+     <!-- Rating Script -->
+     <script>
+      $('.rating-opt').start(function(cur){
+       console.log(cur);
+       $('#info').text(cur);
     });
-  });
-  </script>
-© 2018
+ </script>
+</div>
+<style type="text/css">
+   .listing-list-img img {
+      height:100px;
+   }
+</style>

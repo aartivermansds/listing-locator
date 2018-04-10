@@ -71,4 +71,4 @@ class Admins::ListingsController < ApplicationController
     def listing_params
       params.require(:listing).permit(:name, :description, :banner_image, :city, :state, :country, :zipcode, :latitude, :longitude, :contact, :email, :website, :address, :fb_url, :linkedin_url, :gplus_url, :twitter_url, :listing_category_id)
     end
-end
+  end

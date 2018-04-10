@@ -4,8 +4,8 @@
   <div class="container">
     <div class="banner-caption">
       <div class="col-md-12 col-sm-12 banner-text">
-        <h1>Cooking with fine <span>Wine</span></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+        <h1>A traveler without observation is a bird without wings</h1>
+        <p>Fill your life with adventures, not things.Have stories tell not stuff to show...</p>
         <div class="banner-btn">
           <a href="contact.html" class="btn contact-btn"><i class="ti-headphone"></i>Contact Us</a>
           <a href="full-width-grid.html" class="btn listing-btn"><i class="ti-location-pin"></i>Find Listing</a>
@@ -69,65 +69,110 @@
 </section>
 <!-- End Services Section -->
 
-<!-- Popular Listing Section -->
 <section class="gray-bg">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="heading">
-          <h2>Top &amp; Popular <span>Listings</span></h2>
-          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+          <h2>Favourite <span>Listing</span></h2>
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
         </div>
       </div>
     </div>
-
     <div class="row">
-      <% @listings.each do |listing| %>
-      <div class="col-md-4 col-sm-6">
-        <div class="listing-shot grid-style">
-          <a href="listing-detail.html">
-            <%= link_to listing_path(listing), class: "listing-item" do %>
-            <div class="listing-shot-img">
-              <%= image_tag listing.banner_image_url, class: "img-responsive" , style: "height:200px;width:100%;" if listing.banner_image_url.present? %>
-              <span class="like-listing"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-            </div>
-            <% end %>
-            <div class="listing-shot-caption">
-              <h4><%= listing.name %></h4>
-              <p class="listing-location"><%= listing.address %></p>
-            </div>
-          </a>
-          <div class="listing-shot-info">
-            <div class="row extra">
-              <div class="col-md-12">
-                <div class="listing-detail-info">
-                  <span><i class="fa fa-phone" aria-hidden="true"></i> <%= listing.contact %> </span>
-                  <span><i class="fa fa-globe" aria-hidden="true"></i> <%= listing.website %></span>
+      <div class="list-slide">
+        <% @listings.each do |listing| %>
+          <div class="list-slide-box">
+            <div class="listing-shot grid-style">
+              <a href="">
+                <div class="listing-shot-img">
+                  <%= image_tag listing.banner_image_url, class: "img-responsive" , style: "height:200px;width:100%;" if listing.banner_image_url.present? %>
+                  <span class="like-listing"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                </div>
+                <div class="listing-shot-caption">
+                  <h4><%= listing.name %></h4>
+                  <p class="listing-location"><%= listing.address %></p>
+                </div>
+              </a>
+              <div class="listing-shot-info">
+                <div class="row extra">
+                  <div class="col-md-12">
+                    <div class="listing-detail-info">
+                      <span><i class="fa fa-phone" aria-hidden="true"></i> <%= listing.contact%></span>
+                      <span><i class="fa fa-globe" aria-hidden="true"></i> <%= listing.website%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="listing-shot-info rating">
+                <div class="row extra">
+                  <div class="col-md-7 col-sm-7 col-xs-6">
+                    <i class="color fa fa-star" aria-hidden="true"></i>
+                    <i class="color fa fa-star" aria-hidden="true"></i>
+                    <i class="color fa fa-star" aria-hidden="true"></i>
+                    <i class="color fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-md-5 col-sm-5 col-xs-6 pull-right">
+                    <a href="#" class="detail-link">Open Now</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="listing-shot-info rating">
-            <div class="row extra">
-              <div class="col-md-7 col-sm-7 col-xs-6">
-                <i class="color fa fa-star" aria-hidden="true"></i>
-                <i class="color fa fa-star" aria-hidden="true"></i>
-                <i class="color fa fa-star" aria-hidden="true"></i>
-                <i class="color fa fa-star-half-o" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-              </div>
-              <div class="col-md-5 col-sm-5 col-xs-6 pull-right">
-                <a href="#" class="detail-link">Open Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </section>
-<!-- End Popular Listing Section -->
+
+<section class="gray-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="heading">
+          <h2>Favourite <span>Place</span></h2>
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="list-slide">
+        <% @places.each do |place| %>
+          <div class="list-slide-box">
+            <div class="listing-shot grid-style">
+              <a href="">
+                <div class="listing-shot-img">
+                  <%= image_tag place.banner_image_url, class: "img-responsive" , style: "height:200px;width:100%;" if place.banner_image_url.present? %>
+                  <span class="like-listing"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                </div>
+                <div class="listing-shot-caption">
+                  <h4><%= place.name %></h4>
+                  <p class="listing-location"><%= place.place_category.try(:name) %></p>
+                  <p class="listing-location"><%= place.full_address %></p>
+                </div>
+              </a>
+               <div class="listing-shot-info rating">
+                <div class="row extra">
+                  <div class="col-md-7 col-sm-7 col-xs-6">
+                    <i class="color fa fa-star" aria-hidden="true"></i>
+                    <i class="color fa fa-star" aria-hidden="true"></i>
+                    <i class="color fa fa-star" aria-hidden="true"></i>
+                    <i class="color fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-md-5 col-sm-5 col-xs-6 pull-right">
+                    <a href="#" class="detail-link">Open Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Features Section -->
 <section class="features-sec">
@@ -376,6 +421,7 @@
           </div>
           <div class="testimonial-detail slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" style="width: 550px;" tabindex="-1">
             <div class="pic">
+              <%= image_tag "logo-white.png", class: "logo logo-display", alt: "" %>
               <%= image_tag "logo.png", class: "logo logo-scrolled", alt: "" %>
             </div>
             <p class="description">
@@ -467,3 +513,32 @@
 <!-- ===================== End Login & Sign Up Window =========================== -->
 <!-- Switcher -->
 <a id="back2Top" class="theme-bg" title="Back to top" href="#"><i class="ti-arrow-up"></i></a> 
+
+
+<script type="text/javascript">
+  $('.list-slide').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+      arrows: false,
+      centerMode: true,
+      centerPadding: '40px',
+      slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+      arrows: false,
+      centerMode: true,
+      centerPadding: '40px',
+      slidesToShow: 1
+      }
+    }
+    ]
+  });
+</script>

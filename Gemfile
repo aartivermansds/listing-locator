@@ -61,3 +61,6 @@ gem "ckeditor"
 gem 'carrierwave', '~> 1.0'
 gem "cocoon"
 gem 'dropzonejs-rails'
+gem "font-awesome-rails"
+gem 'country_select'
+gem 'kaminari'

@@ -1,7 +1,7 @@
 <section>
   <div class="container">
     <div class="col-md-10 col-sm-12 col-md-offset-1 mob-padd-0">
-      <%= form_for @listing do |f| %>
+      <%= form_for [:users, @listing] do |f| %>
       <!-- General Information -->
       <% if listing.errors.any? %>
       <div id="error_explanation">
@@ -14,6 +14,7 @@
         </ul>
       </div>
       <% end %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
       <div class="add-listing-box general-info mrg-bot-25 padd-bot-30 padd-top-25">
         <div class="listing-box-header">
           <i class="ti-files theme-cl"></i>

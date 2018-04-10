@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401113538) do
+ActiveRecord::Schema.define(version: 20180406135153) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -96,7 +96,9 @@ ActiveRecord::Schema.define(version: 20180401113538) do
     t.integer "listing_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["listing_category_id"], name: "index_listings_on_listing_category_id"
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "place_categories", force: :cascade do |t|
@@ -140,6 +142,21 @@ ActiveRecord::Schema.define(version: 20180401113538) do
     t.string "lastname"
     t.string "contact"
     t.string "address"
+    t.date "date_of_birth"
+    t.string "company_name"
+    t.string "designation"
+    t.string "state"
+    t.string "city"
+    t.string "zipcode"
+    t.string "country"
+    t.string "about"
+    t.string "profile_image"
+    t.string "website"
+    t.string "facebook_url"
+    t.string "linkedin_url"
+    t.string "googleplus_url"
+    t.string "twitter_url"
+    t.string "youtube_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -29,29 +29,29 @@
 
   <tbody>
     <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.name %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.banner_image %></td>
-        <td><%= listing.city %></td>
-        <td><%= listing.state %></td>
-        <td><%= listing.country %></td>
-        <td><%= listing.zipcode %></td>
-        <td><%= listing.latitude %></td>
-        <td><%= listing.longitude %></td>
-        <td><%= listing.contact %></td>
-        <td><%= listing.email %></td>
-        <td><%= listing.website %></td>
-        <td><%= listing.address %></td>
-        <td><%= listing.fb_url %></td>
-        <td><%= listing.linkedin_url %></td>
-        <td><%= listing.gplus_url %></td>
-        <td><%= listing.twitter_url %></td>
-        <td><%= listing.listing_category %></td>
-        <td><%= link_to 'Show', admins_listing_path(listing) %></td>
-        <td><%= link_to 'Edit', edit_admin_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', admins_listing_path(listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= listing.name %></td>
+      <td><%= listing.description %></td>
+      <td><%= listing.banner_image %></td>
+      <td><%= listing.city %></td>
+      <td><%= listing.state %></td>
+      <td><%= listing.country %></td>
+      <td><%= listing.zipcode %></td>
+      <td><%= listing.latitude %></td>
+      <td><%= listing.longitude %></td>
+      <td><%= listing.contact %></td>
+      <td><%= listing.email %></td>
+      <td><%= listing.website %></td>
+      <td><%= listing.address %></td>
+      <td><%= listing.fb_url %></td>
+      <td><%= listing.linkedin_url %></td>
+      <td><%= listing.gplus_url %></td>
+      <td><%= listing.twitter_url %></td>
+      <td><%= listing.listing_category %></td>
+      <td><%= link_to 'Show', admins_listing_path(listing) %></td>
+      <td><%= link_to 'Edit', edit_admins_listing_path(listing) %></td>
+      <td><%= link_to 'Destroy', admins_listing_path(listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>

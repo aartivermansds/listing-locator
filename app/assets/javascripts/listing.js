@@ -8,7 +8,6 @@
 //= require listing/waypoints.min
 //= require listing/jquery.counterup.min
 //= require listing/jQuery.style.switcher
-//= require listing/custom 
 //= require listing/common
 //= require listing/controls
 //= require listing/datedropper
@@ -24,3 +23,4 @@
 //= require listing/util
 //= require ckeditor/init
 //= require cocoon
+//= require listing/custom 

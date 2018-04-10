@@ -1,0 +1,170 @@
+<!-- ================ Start Page Title ======================= -->
+<section class="title-transparent page-title" style="background:url('<%= asset_path("title-bg.jpg")%>')";>
+  <div class="container">
+  </div>
+</section>
+<div class="clearfix"></div>
+<!-- ================ End Page Title ======================= -->
+
+<!-- ================ Edit Section Start ======================= -->
+<section class="padd-0">
+  <div class="container">
+    <div class="col-md-10 translateY-60 col-sm-12 col-md-offset-1">
+      <!-- General Information -->
+      <%= form_for @user, url: :users_account, method: :patch do |f| %>
+      <div class="add-listing-box edit-info mrg-bot-25 padd-bot-30 padd-top-25">
+        <div class="listing-box-header">
+          <div class="avater-box">
+            <% if @user.profile_image.present? %>
+            <%= image_tag @user.profile_image_url, class: "img-responsive img-circle edit-avater" %>
+            <% else %>
+            <%= image_tag "avatar.jpg", class: "img-responsive img-circle" %>
+            <% end %>
+            <div class="upload-btn-wrapper">
+              <button class="btn theme-btn">Change Avatar</button>
+              <%= f.file_field :profile_image %>
+            </div>
+          </div>
+          <h3>Daniel M. Dev</h3>
+          <p>Account Manager</p>
+        </div>
+        <div class="row mrg-r-10 mrg-l-10">
+          <div class="col-sm-6">
+            <label>First Name</label>
+            <%= f.text_field :firstname, class: "form-control"%>
+          </div>
+          <div class="col-sm-6">
+            <label>Last Name</label>
+            <%= f.text_field :lastname, class: "form-control"%>
+          </div>
+          <div class="col-sm-6">
+            <label>Email</label>
+            <%= f.email_field :email, class: "form-control"%>
+          </div>
+          <div class="col-sm-6">
+            <label>Phone</label>
+            <%= f.text_field :contact, class: "form-control"%>
+          </div>
+          <div class="col-sm-6">
+            <label>DOB</label>
+<!--             <input type="text" data-lang="en" data-format="F S, Y"  data-default-date="11-13-2018" data-fx-mobile="true" data-theme="my-style" data-large-default="true" class="datedropper form-control">
+           -->
+           <%= f.text_field :date_of_birth, class: "datedropper form-control"%>
+          </div>
+        </div>
+      </div>
+      <!-- Edit Location -->
+      <div class="add-listing-box add-location mrg-bot-25 padd-bot-30 padd-top-25">
+        <div class="listing-box-header">
+          <i class="ti-location-pin theme-cl"></i>
+          <h3>Edit Location</h3>
+          <p>Write Address Information about your listing Location</p>
+        </div>
+        <div class="row mrg-r-10 mrg-l-10">
+          <div class="col-sm-6">
+            <label>Address</label>
+            <%= f.text_field :address, class: "form-control"%>
+          </div>
+          <div class="col-sm-6">
+            <label>City</label>
+            <%= f.text_field :city, class: "form-control"%>
+          </div>
+          <div class="col-sm-6">
+            <label>State</label>
+            <%= f.text_field :state, class: "form-control"%>
+          </div>
+          <div class="col-sm-6">
+            <label>Country</label>
+            <%= f.text_field :country, class: "form-control"%>
+          </div>
+          <div class="col-sm-6">
+            <label>Zip-Code</label>
+            <%= f.text_field :zipcode, class: "form-control"%>
+          </div>
+        </div>
+      </div>
+      <!-- End Edit Location -->
+
+      <!-- Full Information -->
+      <div class="add-listing-box full-detail mrg-bot-25 padd-bot-30 padd-top-25">
+        <div class="listing-box-header">
+          <i class="ti-write theme-cl"></i>
+          <h3>Full Details</h3>
+          <p>Write full detail information about listing Owner</p>
+        </div>
+        <div class="row mrg-r-10 mrg-l-10">
+          <div class="col-sm-6">
+            <label>Website</label>
+            <%= f.text_field :website, class: "form-control"%>
+          </div>
+
+          <div class="col-sm-6">
+            <label>Owner Designation</label>
+            <%= f.text_field :designation, class: "form-control"%>
+          </div>
+
+          <div class="col-sm-6">
+            <label>Company</label>
+            <%= f.text_field :company_name, class: "form-control"%>
+          </div>
+
+          <div class="col-sm-6">
+            <label><i class="fa fa-facebook mrg-r-5" aria-hidden="true"></i>Facebook Link</label>
+            <%= f.text_field :facebook_url, class: "form-control"%>
+          </div>
+
+          <div class="col-sm-6">
+            <label><i class="fa fa-twitter mrg-r-5" aria-hidden="true"></i>Twitter User</label>
+            <%= f.text_field :twitter_url, class: "form-control"%>
+          </div>
+
+          <div class="col-sm-6">
+            <label><i class="fa fa-google-plus mrg-r-5" aria-hidden="true"></i>Google Plus</label>
+            <%= f.text_field :googleplus_url, class: "form-control"%>
+          </div>
+
+          <div class="col-sm-6">
+            <label><i class="fa fa-linkedin mrg-r-5" aria-hidden="true"></i>LinkedIn</label>
+            <%= f.text_field :linkedin_url, class: "form-control"%>
+          </div>
+
+          <div class="col-sm-12">
+            <label>Description</label>
+            <%= f.text_area :about, class: "form-control", rows: "5"%>
+          </div>
+        </div>
+      </div>
+      <!-- End Full Information -->
+
+      <!-- Change Password Information -->
+      <div class="add-listing-box opening-day mrg-bot-25 padd-bot-30 padd-top-25">
+        <div class="listing-box-header">
+          <i class="ti-lock theme-cl"></i>
+          <h3>Change Password</h3>
+          <p>Remember, Your Password should not be easy and common</p>
+        </div>
+        <div class="row mrg-r-10 mrg-l-10">
+          <div class="col-sm-6">
+            <label>Old Password</label>
+            <input type="text" class="form-control" value="*********">
+          </div>
+
+          <div class="col-sm-6">
+            <label>New Password</label>
+            <input type="text" class="form-control" value="*********">
+          </div>
+        </div>
+      </div>
+      <!-- End Change Password Information -->
+      <div class="text-center">
+        <%= f.submit "Update Profile", class: "btn theme-btn" %>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
+</section>
+<!-- ================ End Edit Section Start ======================= -->
+<script>
+  $('.datedropper').dateDropper();
+</script>
