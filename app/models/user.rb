@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   has_many :listings, dependent: :destroy
+  has_many :accomodations, dependent: :destroy
 
   mount_uploader :profile_image, ImageUploader
   

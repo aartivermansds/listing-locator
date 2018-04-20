@@ -1,0 +1,334 @@
+<!-- ================ Listing Detail Basic Information ======================= -->
+<section class="detail-section" style="background:url('<%= @place.banner_image.url %>')";>
+   <div class="overlay" style="background-color: rgb(36, 36, 41); opacity: 0.5;">
+   </div>
+</section>
+<!-- ================ End Listing Detail Basic Information ======================= -->
+<!-- ================ Listing Detail Full Information ======================= -->
+<section class="list-detail">
+   <div class="container">
+      <div class="row">
+         <!-- Start: Listing Detail Wrapper -->
+         <div class="col-md-8 col-sm-8">
+            <div class="detail-wrapper">
+               <div class="detail-wrapper-body">
+                  <div class="listing-title-bar">
+                     <h3><%= @place.name %> <span class="mrg-l-5 category-tag"><%= @place.place_category.try(:name) %></span></h3>
+                     <div>
+                        <a href="#listing-location" class="listing-address">
+                        <i class="ti-location-pin mrg-r-5"></i>
+                        <%= @place.full_address %>
+                        </a>
+                        <div class="rating-box">
+                           <div class="detail-list-rating">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                           </div>
+                           <a href="#" class="detail-rating-count">47 Rating</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="detail-wrapper">
+               <div class="detail-wrapper-header">
+                  <h4>Overview</h4>
+               </div>
+               <div class="detail-wrapper-body">
+                  <%= @place.description.html_safe %>
+               </div>
+            </div>
+            <div class="detail-wrapper">
+               <div class="detail-wrapper-header">
+                  <h4>Location</h4>
+               </div>
+               <div class="detail-wrapper-body">
+                  <div id="map_full_width_one" class="full-width" style="height:400px;"></div>
+               </div>
+            </div>
+            <div class="detail-wrapper">
+               <div class="detail-wrapper-header">
+                  <h4>24 Reviews</h4>
+               </div>
+               <div class="detail-wrapper-body">
+                  <ul class="review-list">
+                     <li>
+                        <div class="reviews-box">
+                           <div class="review-body">
+                              <div class="review-avatar">
+                                 <%= image_tag "user-1.png", class: "avatar avatar-140 photo" %>
+                              </div>
+                              <div class="review-content">
+                                 <div class="review-info">
+                                    <div class="review-comment">
+                                       <div class="review-author">
+                                          Cole Harris                                     
+                                       </div>
+                                       <div class="review-comment-stars">
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star empty"></i>
+                                       </div>
+                                    </div>
+                                    <div class="review-comment-date">
+                                       <div class="review-date">
+                                          <span>4 weeks ago</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <p>At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui Blanditiis Praesentium Voluptatum Deleniti Atque Corrupti Quos Dolores Et Quas Molestias Excepturi Sint Occaecati Cupiditate Non Provident.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="reviews-box">
+                           <div class="review-body">
+                              <div class="review-avatar">
+                                 <%= image_tag "user-1.png", class: "avatar avatar-140 photo" %>
+                              </div>
+                              <div class="review-content">
+                                 <div class="review-info">
+                                    <div class="review-comment">
+                                       <div class="review-author">
+                                          Mariya Merry                                      
+                                       </div>
+                                       <div class="review-comment-stars">
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star empty"></i>
+                                       </div>
+                                    </div>
+                                    <div class="review-comment-date">
+                                       <div class="review-date">
+                                          <span>3 weeks ago</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <p>At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui Blanditiis Praesentium Voluptatum Deleniti Atque Corrupti Quos Dolores Et Quas Molestias Excepturi Sint Occaecati Cupiditate Non Provident.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="reviews-box">
+                           <div class="review-body">
+                              <div class="review-avatar">
+                                 <%= image_tag "user-1.png", class: "avatar avatar-140 photo" %>
+                              </div>
+                              <div class="review-content">
+                                 <div class="review-info">
+                                    <div class="review-comment">
+                                       <div class="review-author">
+                                          Wadden Will                                 
+                                       </div>
+                                       <div class="review-comment-stars">
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star"></i>
+                                          <i class="fa fa-star empty"></i>
+                                       </div>
+                                    </div>
+                                    <div class="review-comment-date">
+                                       <div class="review-date">
+                                          <span>5 weeks ago</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <p>At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui Blanditiis Praesentium Voluptatum Deleniti Atque Corrupti Quos Dolores Et Quas Molestias Excepturi Sint Occaecati Cupiditate Non Provident.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="detail-wrapper">
+               <div class="detail-wrapper-header">
+                  <h4>Rate & Write Reviews</h4>
+               </div>
+               <div class="detail-wrapper-body">
+                  <div class="row mrg-bot-10">
+                     <div class="col-md-12">
+                        <div class="rating-opt">
+                           <div   class="jr-ratenode jr-nomal"></div>
+                           <div   class="jr-ratenode jr-nomal "></div>
+                           <div   class="jr-ratenode jr-nomal "></div>
+                           <div   class="jr-ratenode jr-nomal "></div>
+                           <div   class="jr-ratenode jr-nomal "></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="Your Name*">
+                     </div>
+                     <div class="col-sm-6">
+                        <input type="email" class="form-control" placeholder="Email Address*">
+                     </div>
+                     <div class="col-sm-12">
+                        <textarea class="form-control height-110" placeholder="Tell us your experience..."></textarea>
+                     </div>
+                     <div class="col-sm-12">
+                        <button type="button" class="btn theme-btn">Submit your review</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- End: Listing Detail Wrapper -->
+         <!-- Sidebar Start -->
+         <div class="col-md-4 col-sm-12">
+            <div class="sidebar">
+               <!-- Start: Listing Gallery -->
+               <div class="widget-boxed">
+                  <div class="widget-boxed-header">
+                     <h4><i class="ti-gallery padd-r-10"></i>Gallery</h4>
+                  </div>
+                  <div class="widget-boxed-body">
+                     <div class="side-list no-border gallery-box">
+                        <ul class="gallery-list">
+                           <% @place.images.each do |image| %>
+                           <li>
+                              <%= link_to image.image_url, "data-fancybox" => "gallery" do %>
+                              <%= image_tag image.image_url, class: "img-responsive" %>
+                              <% end %>
+                           </li>
+                           <% end %>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <!-- End: Listing Gallery -->
+               <!-- Start: Latest Listing -->
+               <div class="widget-boxed">
+                  <div class="widget-boxed-header">
+                     <h4><i class="ti-check-box padd-r-10"></i>Near by accomodation</h4>
+                  </div>
+                  <div class="widget-boxed-body padd-top-5">
+                     <div class="side-list">
+                        <ul class="listing-list">
+                           <% @near_by_accomodations.each do |near_by_accomodation| %>
+                           <li>
+                              <a href="#">
+                                 <div class="listing-list-img">
+                                    <%= image_tag near_by_accomodation.banner_image_url, class: "img-responsive" if near_by_accomodation.banner_image_url.present? %>
+                                 </div>
+                                 <div class="listing-list-info">
+                                    <h5>
+                              <a href="#" title="Listing"><%= near_by_accomodation.name.upcase %></a>
+                              </h5>
+<!--                               <div class="listing-post-meta">
+                              <span class="updated"><#%= near_by_accomodation.created_at.strftime("%b %d, %Y") %></span> | <a href="#" rel="tag"><#%= near_by_accomodation.accomodation_category
+                                 .try(:name) %></a>          
+                              </div>
+                               --></div>
+                              </a>
+                           </li>
+                           <% end %>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <!-- End: Latest Listing -->
+               <!-- Start: Listing Category -->
+               <div class="widget-boxed">
+                  <div class="widget-boxed-header">
+                     <h4><i class="ti-briefcase padd-r-10"></i>More place Categories</h4>
+                  </div>
+                  <div class="widget-boxed-body padd-top-10 padd-bot-0">
+                     <div class="side-list">
+                        <ul class="category-list">
+                           <% @place_categories.each do |pc| %>
+                           <li><a href="#"><%= pc.name%> <span class="badge bg-g"><%= pc.places.count %></span></a></li>
+                           <% end %>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- End: Listing Location -->
+         </div>
+      </div>
+      <!-- End: Sidebar Start -->
+   </div>
+   </div>
+</section>
+<div></div>
+<!-- Google-map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
+<script src="assets/js/gmap3.min.js"></script>
+<script type="text/javascript">
+   $('#map_full_width_one').gmap3({
+     map: {
+       options: {
+         zoom: 12,
+         center: [<%= @place.latitude %>, <%= @place.longitude %>],
+         mapTypeControl: true,
+         mapTypeControlOptions: {
+           style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+         },
+         mapTypeId: "style1",
+         mapTypeControlOptions: {
+           mapTypeIds: [google.maps.MapTypeId.ROADMAP, "style1"]
+         },
+         navigationControl: true,
+         scrollwheel: false,
+         streetViewControl: true
+       }
+     },
+     marker: {
+       latLng: [<%= @place.latitude %>, <%= @place.longitude %>],
+       options: {animation:google.maps.Animation.BOUNCE, icon: '<%= asset_path("marker.png")%>' }
+     },
+     styledmaptype: {
+       id: "style1",
+       options: {
+         name: "Style 1"
+       },
+   
+     }
+   });
+   
+</script>
+<script type="text/javascript">
+   $("[data-fancybox]").fancybox({
+               // Options will go here
+             });   
+   
+</script>
+<!-- Date Dropper Script-->
+<script>
+   $('#reservation-date').dateDropper();
+</script>
+<!-- Time Dropper Script-->
+<script>
+   this.$('#reservation-time').timeDropper({
+     setCurrentTime: false,
+     meridians: true,
+     primaryColor: "#e8212a",
+     borderColor: "#e8212a",
+     minutesInterval: '15'
+   });
+</script>
+<!-- Rating Script -->
+<script>
+   $('.rating-opt').start(function(cur){
+    console.log(cur);
+    $('#info').text(cur);
+   });
+</script>
+</div>
+<style type="text/css">
+   .accomodation-list-img img {
+   height:100px;
+   }
+</style>

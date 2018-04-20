@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
-amenities = Amenity.create([{name: "Alarm system"},{name: "dLaundry room in building"},{name: "Elevator"}, {name: "Depanneur in building"},{name: "Door attendant"},{name: "Wheelchair accessible"},{name: "Onsite management"},{name: "Street parking"},{name: "Heating"},{name: " Janitor"},{name: " Intercom"},{name: "Hot water"},{name: "Security cameras"},{name: "Attached garage"},{name: "Electricity"}])
+amenities = Amenity.create([{name: "Alarm system"},{name: "Laundry room in building"},{name: "Elevator"}, {name: "Depanneur in building"},{name: "Door attendant"},{name: "Wheelchair accessible"},{name: "Onsite management"},{name: "Street parking"},{name: "Heating"},{name: " Janitor"},{name: " Intercom"},{name: "Hot water"},{name: "Security cameras"},{name: "Attached garage"},{name: "Electricity"}])
 listing_categories = ListingCategory.create([{name: "Restaurant & Cafe"},{name: "Hotels"},{name: "Beauty & Spa"},{name: "Automotive"},{name: "Hospitals & Clinics"},{name: "Theater & Cinema"},{name: "Malls & Shopping complexes"}])
 place_categories = PlaceCategory.create([{name: "Historical"},{name: "Nature"},{name: "Picnics"},{name: "Religious"},{name: "Museum"},{name: "Adventures"}])
 places = Place.create([

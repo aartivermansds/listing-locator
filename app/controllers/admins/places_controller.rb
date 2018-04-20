@@ -20,7 +20,27 @@ class Admins::PlacesController < ApplicationController
   # GET /places/1/edit
   def edit
   end
-
+  
+  def upload_place_image
+   @places = Place.find(params[:upload_images][:place_id])
+   @image = @places.images.build(image: params[:upload][:image])
+   if @image.save!
+     respond_to do |format|
+       format.json{ render :json => @image }
+     end
+   end
+ end
+ def remove_place_image
+   @image = Image.find(params[:id])
+   if  @image .destroy
+    render json: { message: "file delete from server"}
+  else
+   render json: {message: @image.errors.full_messages.join(", ") }
+ end
+end
+def add_images
+ @place = Place.find(params[:id])
+end
   # POST /places
   # POST /places.json
   def create
@@ -71,4 +91,4 @@ class Admins::PlacesController < ApplicationController
     def place_params
       params.require(:place).permit(:name, :description, :banner_image, :city, :state, :country, :zipcode, :place_category_id)
     end
-end
+  end

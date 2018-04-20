@@ -50,5 +50,44 @@
   <%= @place.place_category %>
 </p>
 
+<div class="container">
+   <div style="margin-top:50px;">
+      <%= form_for :upload_images, url: :upload_place_image_admins_places,  html: { multipart: true, class: "dropzone"} do |f|  %>
+      <%= f.hidden_field :place_id, value:  @place.id %>
+      <div class="fallback">
+         <%= f.file_field :image %><br>
+         <%= f.submit "Upload" %>
+      </div>
+      <% end %>
+   </div>
+   <%= link_to "Back to Listing", place_path(@place), class: "btn btn-success", style: "margin-left:10%;margin-bottom:50px;" %>
+</div>
+<script type="text/javascript">
+   $(function () {
+     $(".dropzone").dropzone({
+       
+       paramName: 'upload[image]',
+       addRemoveLinks: true,
+       success: function(file, response) {
+         $(file.previewElement).find('.dz-remove').attr('id', response.id);
+         $(file.previewElement).addClass('dz-success');
+       },
+       removedfile: function(file) {
+         var id = $(file.previewTemplate).find('.dz-remove').attr('id');
+         $.ajax({
+           type: 'DELETE',
+           url: "/remove_listing_image/" + id,
+           success: function(data) {
+             console.log(data.message);
+           }
+         });
+         var previewElement;
+         return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
+       },
+     });
+   });
+</script>
+
+
 <%= link_to 'Edit', edit_admins_place_path(@place) %> |
 <%= link_to 'Back', admins_places_path %>

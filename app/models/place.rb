@@ -1,6 +1,6 @@
 class Place < ApplicationRecord
   belongs_to :place_category, optional: true
-  has_many :images, as: :imageable
+  has_many :images, as: :imageable, dependent: :destroy
   geocoded_by :full_address
   after_validation :geocode
 

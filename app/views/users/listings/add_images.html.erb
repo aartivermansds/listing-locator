@@ -52,7 +52,7 @@
 </section>
 <div class="container">
    <div style="margin-top:50px;">
-      <%= form_for :upload_images, url: :upload_listing_image_listings,  html: { multipart: true, class: "dropzone"} do |f|  %>
+      <%= form_for :upload_images, url: :upload_listing_image_users_listings,  html: { multipart: true, class: "dropzone"} do |f|  %>
       <%= f.hidden_field :listing_id, value:  @listing.id %>
       <div class="fallback">
          <%= f.file_field :image %><br>

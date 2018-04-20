@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ListingLocator</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <%= csrf_meta_tags %>
+<head>
+  <title>ListingLocator</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'listing', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'listing', 'data-turbolinks-track': 'reload' %>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+  <%= stylesheet_link_tag    'listing', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'listing', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+  
+</head>
 
-  <body class="home-2">
-    <div class="wrapper">
-      <%= render "layouts/listing_header" %>
-      <%= yield %>
-      <%= render "layouts/listing_footer" %>
-    </div>
-  </body>
+<body class="home-2">
+  <div class="wrapper">
+    <%= render "layouts/listing_header" %>
+    <%= yield %>
+    <%= render "layouts/listing_footer" %>
+  </div>
+</body>
 </html>

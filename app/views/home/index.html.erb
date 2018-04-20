@@ -6,26 +6,21 @@
       <div class="col-md-12 col-sm-12 banner-text">
         <h1>A traveler without observation is a bird without wings</h1>
         <p>Fill your life with adventures, not things.Have stories tell not stuff to show...</p>
-        <div class="banner-btn">
-          <a href="contact.html" class="btn contact-btn"><i class="ti-headphone"></i>Contact Us</a>
-          <a href="full-width-grid.html" class="btn listing-btn"><i class="ti-location-pin"></i>Find Listing</a>
+        <%= form_for :search, url: :search_listing, method: :get, html: {class: "form-verticle" } do |f| %>
+        <div class="col-md-4 col-sm-4 no-padd">
+          <i class="banner-icon icon-pencil"></i>
+          <%= f.text_field :keyword, class: "form-control left-radius right-br", placeholder: "Keywords.." %>
         </div>
-        <div class="banner-info">
-          <div class="row">
-            <div class="col-md-4 col-sm-4">
-              <i class="ti-location-pin"></i>
-              <span>429 Gnatty Creek Road<br> Bohemia, NY 11716</span>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <i class="ti-email"></i>
-              <span>supportlisting@gmail.com<br> tlisting@gmail.com</span>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <i class="ti-headphone"></i>
-              <span>+91 256 558 4758<br> 6952 230 528</span>
-            </div>
-          </div>
+        <div class="col-md-5 col-sm-5 no-padd">
+          <i class="banner-icon icon-map"></i>
+          <%= f.text_field :location, class: "form-control right-br", placeholder: "Location..", id: "autocomplete", onFocus: "geolocate()" %>
+          <%= f.hidden_field :latitude, id: :listing_lat %>
+          <%= f.hidden_field :longitude, id: :listing_long %>
         </div>
+        <div class="col-md-3 col-sm-3 no-padd">
+          <%= f.submit "Search", class: "btn theme-btn btn-default" %>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -40,7 +35,7 @@
       <div class="col-md-10 col-md-offset-1">
         <div class="heading">
           <h2>Plan Which in <span>Your Mind</span></h2>
-          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          <p>If you want to conquer fear, don't sit home and think about it. Go out and get busy.The greatest self is a peaceful smile, that always sees the world smiling back.</p>
         </div>
       </div>
     </div>
@@ -48,7 +43,8 @@
       <div class="feature-box">
         <span class="ti-map-alt"></span>
         <h4>Find Interesting Place</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <p>The day you decide you are more interested in being aware of your thoughts than you are in the thoughts themselves – that is the day you will find your way out.
+        </p>
       </div>
     </div>
     <div class="col-md-4 col-sm-4">
@@ -61,8 +57,8 @@
     <div class="col-md-4 col-sm-4">
       <div class="feature-box">
         <span class="ti-user"></span>
-        <h4>Make a Reservation</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <h4>Best Time To Visit India</h4>
+        <p>India could be visited throughout the year.With our compilation on best time to visit in India according to season, know where to plan your holiday and best things to do in that season if you are planning your tour to India.</p>
       </div>
     </div>
   </div>
@@ -82,48 +78,45 @@
     <div class="row">
       <div class="list-slide">
         <% @listings.each do |listing| %>
-          <div class="list-slide-box">
-            <div class="listing-shot grid-style">
-              <a href="">
-                <div class="listing-shot-img">
-                  <%= image_tag listing.banner_image_url, class: "img-responsive" , style: "height:200px;width:100%;" if listing.banner_image_url.present? %>
-                  <span class="like-listing"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-                </div>
-                <div class="listing-shot-caption">
-                  <h4><%= listing.name %></h4>
-                  <p class="listing-location"><%= listing.address %></p>
-                </div>
-              </a>
-              <div class="listing-shot-info">
-                <div class="row extra">
-                  <div class="col-md-12">
-                    <div class="listing-detail-info">
-                      <span><i class="fa fa-phone" aria-hidden="true"></i> <%= listing.contact%></span>
-                      <span><i class="fa fa-globe" aria-hidden="true"></i> <%= listing.website%></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="listing-shot-info rating">
-                <div class="row extra">
-                  <div class="col-md-7 col-sm-7 col-xs-6">
-                    <i class="color fa fa-star" aria-hidden="true"></i>
-                    <i class="color fa fa-star" aria-hidden="true"></i>
-                    <i class="color fa fa-star" aria-hidden="true"></i>
-                    <i class="color fa fa-star-half-o" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-md-5 col-sm-5 col-xs-6 pull-right">
-                    <a href="#" class="detail-link">Open Now</a>
-                  </div>
+        <div class="list-slide-box">
+          <div class="listing-shot grid-style">
+           <%= link_to listing_path(listing) do %>
+           <div class="listing-shot-img">
+            <%= image_tag listing.banner_image_url, class: "img-responsive" , style: "height:200px;width:100%;" if listing.banner_image_url.present? %>
+            <span class="like-listing"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+          </div>
+          <div class="listing-shot-caption">
+            <h4><%= listing.name %></h4>
+            <p class="listing-location"><%= listing.address %></p>
+          </div>
+          <div class="listing-shot-info">
+            <div class="row extra">
+              <div class="col-md-12">
+                <div class="listing-detail-info">
+                  <span><i class="fa fa-phone" aria-hidden="true"></i> <%= listing.contact%></span>
+                  <span><i class="fa fa-globe" aria-hidden="true"></i> <%= listing.website%></span>
                 </div>
               </div>
             </div>
           </div>
-        <% end %>
+          <% end %>
+          <div class="listing-shot-info rating">
+            <div class="row extra">
+              <div class="col-md-7 col-sm-7 col-xs-6">
+                <i class="color fa fa-star" aria-hidden="true"></i>
+                <i class="color fa fa-star" aria-hidden="true"></i>
+                <i class="color fa fa-star" aria-hidden="true"></i>
+                <i class="color fa fa-star-half-o" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <% end %>
     </div>
   </div>
+</div>
 </section>
 
 <section class="gray-bg">
@@ -139,35 +132,32 @@
     <div class="row">
       <div class="list-slide">
         <% @places.each do |place| %>
-          <div class="list-slide-box">
-            <div class="listing-shot grid-style">
-              <a href="">
-                <div class="listing-shot-img">
-                  <%= image_tag place.banner_image_url, class: "img-responsive" , style: "height:200px;width:100%;" if place.banner_image_url.present? %>
-                  <span class="like-listing"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-                </div>
-                <div class="listing-shot-caption">
-                  <h4><%= place.name %></h4>
-                  <p class="listing-location"><%= place.place_category.try(:name) %></p>
-                  <p class="listing-location"><%= place.full_address %></p>
-                </div>
-              </a>
-               <div class="listing-shot-info rating">
-                <div class="row extra">
-                  <div class="col-md-7 col-sm-7 col-xs-6">
-                    <i class="color fa fa-star" aria-hidden="true"></i>
-                    <i class="color fa fa-star" aria-hidden="true"></i>
-                    <i class="color fa fa-star" aria-hidden="true"></i>
-                    <i class="color fa fa-star-half-o" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-md-5 col-sm-5 col-xs-6 pull-right">
-                    <a href="#" class="detail-link">Open Now</a>
-                  </div>
+        <div class="list-slide-box">
+          <div class="listing-shot grid-style">
+            <%= link_to place_path(place) do %>
+            <div class="listing-shot-img">
+              <%= image_tag place.banner_image_url, class: "img-responsive" , style: "height:200px;width:100%;" if place.banner_image_url.present? %>
+              <span class="like-listing"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+            </div>
+            <div class="listing-shot-caption">
+              <h4><%= place.name %></h4>
+              <p class="listing-location"><%= place.place_category.try(:name) %></p>
+              <p class="listing-location"><%= place.full_address %></p>
+            </div>
+            <% end %>
+            <div class="listing-shot-info rating">
+              <div class="row extra">
+                <div class="col-md-7 col-sm-7 col-xs-6">
+                  <i class="color fa fa-star" aria-hidden="true"></i>
+                  <i class="color fa fa-star" aria-hidden="true"></i>
+                  <i class="color fa fa-star" aria-hidden="true"></i>
+                  <i class="color fa fa-star-half-o" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
                 </div>
               </div>
             </div>
           </div>
+        </div>
         <% end %>
       </div>
     </div>
@@ -524,21 +514,98 @@
     {
       breakpoint: 768,
       settings: {
-      arrows: false,
-      centerMode: true,
-      centerPadding: '40px',
-      slidesToShow: 2
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 2
       }
     },
     {
       breakpoint: 480,
       settings: {
-      arrows: false,
-      centerMode: true,
-      centerPadding: '40px',
-      slidesToShow: 1
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
       }
     }
     ]
   });
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI&libraries=places&callback=initAutocomplete"
+async defer></script>
+
+<script>
+  // This example displays an address form, using the autocomplete feature
+  // of the Google Places API to help users fill in the information.
+
+  // This example requires the Places library. Include the libraries=places
+  // parameter when you first load the API. For example:
+  // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+  var placeSearch, autocomplete;
+  var componentForm = {
+    street_number: 'short_name',
+    route: 'long_name',
+    locality: 'long_name',
+    administrative_area_level_1: 'short_name',
+    country: 'long_name',
+    postal_code: 'short_name'
+  };
+
+  function initAutocomplete() {
+    // Create the autocomplete object, restricting the search to geographical
+    // location types.
+    autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+      {types: ['geocode']});
+
+    // When the user selects an address from the dropdown, populate the address
+    // fields in the form.
+    autocomplete.addListener('place_changed', fillInAddress);
+  }
+
+  function fillInAddress() {
+    // Get the place details from the autocomplete object.
+    var place = autocomplete.getPlace();
+    lat = place.geometry.location.lat();
+    long = place.geometry.location.lng();
+
+    $("#listing_lat").val(lat);
+    $("#listing_long").val(long);
+
+    for (var component in componentForm) {
+      document.getElementById(component).value = '';
+      document.getElementById(component).disabled = false;
+    }
+
+    // Get each component of the address from the place details
+    // and fill the corresponding field on the form.
+    for (var i = 0; i < place.address_components.length; i++) {
+      var addressType = place.address_components[i].types[0];
+      if (componentForm[addressType]) {
+        var val = place.address_components[i][componentForm[addressType]];
+        document.getElementById(addressType).value = val;
+      }
+    }
+  }
+
+  // Bias the autocomplete object to the user's geographical location,
+  // as supplied by the browser's 'navigator.geolocation' object.
+  function geolocate() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var geolocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        var circle = new google.maps.Circle({
+          center: geolocation,
+          radius: position.coords.accuracy
+        });
+        autocomplete.setBounds(circle.getBounds());
+      });
+    }
+  }
 </script>

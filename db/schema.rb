@@ -10,7 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406135153) do
+ActiveRecord::Schema.define(version: 20180419125628) do
+
+  create_table "accomadation_categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "banner_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "accomodation_amenities", force: :cascade do |t|
+    t.integer "accomodation_id"
+    t.integer "amenity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "accomodations", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "banner_image"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "address"
+    t.string "zipcode"
+    t.string "website"
+    t.string "latitude"
+    t.string "longitude"
+    t.string "email"
+    t.string "contact"
+    t.integer "no_of_rooms"
+    t.integer "no_of_toilets"
+    t.integer "no_of_halls"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -48,6 +85,27 @@ ActiveRecord::Schema.define(version: 20180406135153) do
     t.string "icon_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "contact"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_customers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
   create_table "images", force: :cascade do |t|

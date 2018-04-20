@@ -1,0 +1,15 @@
+<section class="title-transparent page-title" style="background:url('<%= asset_path("hotel-banner-.jpg")%>')">
+  <div class="container">
+    <div class="title-content">
+      <h1>Add Accommodation</h1>
+      <div class="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="gt3_breadcrumb_divider"></span>
+        <span class="current">Add Accommodation</span>
+      </div>
+    </div>
+  </div>
+</section>
+<%= render 'form', accomodation: @accomodation %>
+
+<%= link_to 'Back', users_accomodations_path %>

@@ -12,5 +12,6 @@
  *
  *= require listing/bootstrap
  *= require font-awesome
+ *= require dropzone/dropzone
  *= require_self
  */

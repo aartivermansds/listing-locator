@@ -1,0 +1,186 @@
+<div class="clearfix"></div>
+<!-- ================ Start Page Title ======================= -->
+<section class="title-transparent page-title" style="background:url('<%= asset_path("title-bg.jpg")%>')";>
+   <div class="container">
+   </div>
+</section>
+<div class="clearfix"></div>
+<!-- ================ Profile Name Section ======================= -->
+<section class="padd-0">
+   <div class="container">
+      <div class="col-md-12 translateY-60 col-sm-12">
+         <!-- General Information -->
+         <div class="add-listing-box edit-info mrg-bot-25 padd-bot-30 padd-top-25">
+            <div class="listing-box-header">
+               <div class="avater-box">
+                  <%= image_tag "avatar.jpg", class: "img-responsive img-circle", alt: "" %>
+                  <span class="avater-status status-pulse online"></span>
+               </div>
+               <h3>Daniel M. Dev</h3>
+               <p>270 Listing</p>
+            </div>
+         </div>
+         <!-- End General Information -->
+      </div>
+   </div>
+</section>
+<!-- ================ End Profile Name Section ======================= -->
+<!-- ================ Start Manage Listing ======================= -->
+<section class="manage-listing padd-top-0">
+   <div class="container">
+      <div class="col-md-12 col-sm-12">
+         <!-- Filter Option -->
+         <div class="row">
+            <div class="col-md-8">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="control-label col-xs-3">Sort By:</label>
+                        <div class="col-xs-9">
+                           <select class="form-control">
+                              <option value="download_name_tag" selected="selected">Theme Name</option>
+                              <option value="timestamp">Last Updated</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label class="control-label col-xs-3">Author:</label>
+                        <div class="col-xs-9">
+                           <select class="form-control">
+                              <option value="download_name_tag" selected="selected">Theme Name</option>
+                              <option value="timestamp">Last Updated</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="full-right search-wrapper">
+                  <input type="search" class="form-control" placeholder="Filter by keyword...">
+               </div>
+            </div>
+         </div>
+         <!-- End Filter Option -->
+         <!-- Start All Listing List -->
+         <div class="row">
+            <% @accomodations.each do |accomodation| %>
+            <div class="col-md-12">
+               <div class="small-list-wrapper">
+                  <%= link_to accomodation_path(accomodation), class: "listing-item" do %>
+                  <ul>
+                     <li>
+                        <div class="small-listing-box light-gray">
+                           <div class="small-list-img">
+                              <%= image_tag accomodation.banner_image_url, class: "img-responsive" ,  style: "height:50px;width:100%;" if accomodation.banner_image_url.present? %>
+                           </div>
+                           <% end %> 
+                           <!--                            <div class="small-list-detail">
+                              <h4><#%= accomodation.name %></h4>
+                              <p><a href="#" title="Food & restaurant">
+                                 <#%= accomodation.accomodation_category.try(:name) %>
+                                 </a>
+                              </p>
+                              </div>
+                              -->
+                           <div class="small-list-action">
+                              <%= link_to edit_accomodation_path(accomodation), class: "light-gray-btn btn-square" do %>
+                              <i class="fa fa-pencil"></i>
+                              <% end %>
+                              <%= link_to accomodation_path(accomodation), method: :delete, data: { confirm: 'Are you sure?' }, class: "theme-btn btn-square" do %>
+                              <i class="fa fa-trash"></i>
+                              <% end %>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <% end %>
+         </div>
+      </div>
+   </div>
+</section>
+</div>
+<!-- ================ End Start Manage Listing ======================= -->
+<!-- ================ Start Footer ======================= -->
+<footer class="footer dark-bg">
+   <div class="row padd-0 mrg-0">
+      <div class="footer-text">
+         <div class="col-md-3 col-sm-12 theme-bg">
+            <div class="footer-widget">
+               <div class="textwidget">
+                  <h3 class="widgettitle widget-title">Get In Touch</h3>
+                  <p>7744 North Park Place<br>
+                     San Francisco, CA 714258
+                  </p>
+                  <p><strong>Email:</strong> support@listinghub.com</p>
+                  <p>
+                     <strong>Call:</strong> <a href="tel:+774422777">777-444-2222</a>
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-5 col-sm-4">
+            <div class="footer-widget">
+               <h3 class="widgettitle widget-title">About Us</h3>
+               <ul class="footer-navigation">
+                  <li><a href="#">Home Version 1</a></li>
+                  <li><a href="#">Home Version 2</a></li>
+                  <li><a href="#">Home Version 3</a></li>
+                  <li><a href="#">Home Version 4</a></li>
+                  <li><a href="#">Listing Detail</a></li>
+                  <li><a href="#">Listing Vertical</a></li>
+                  <li><a href="#">Listing Sidebar</a></li>
+                  <li><a href="#">Vertical Sidebar</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-md-4 col-sm-6">
+            <div class="footer-widget">
+               <h3 class="widgettitle widget-title">Connect Us</h3>
+               <%= image_tag "footer-logo.png", class: "img-responsive", alt: "" %>
+               <ul class="footer-social">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="footer-copyright">
+      <p>Copyright@ 2017 Listing Hub Design By <a href="http://www.themezhub.com/" title="Themezhub" target="_blank">Themezhub</a></p>
+   </div>
+</footer>
+<!-- ================ End Footer Section ======================= -->
+<!-- Switcher -->
+<button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()"><i class="spin theme-cl fa fa-cog" aria-hidden="true"></i></button>
+<div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-right" style="display:none;right:0;" id="rightMenu">
+<button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large theme-bg">Close &times;</button>
+<div class="title-logo">
+   <%= image_tag "logo.png", class: "img-responsive", alt: "" %>
+   <h4>Choose Your Color</h4>
+</div>
+<script>
+   function openRightMenu() {
+    document.getElementById("rightMenu").style.display = "block";
+   }
+   function closeRightMenu() {
+    document.getElementById("rightMenu").style.display = "none";
+   }
+</script>
+<script type="text/javascript">
+   $(document).ready(function() {
+    $('#styleOptions').styleSwitcher();
+   });
+</script>
+<script>
+   $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+   });
+</script>

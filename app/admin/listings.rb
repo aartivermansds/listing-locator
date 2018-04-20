@@ -3,7 +3,7 @@ ActiveAdmin.register Listing do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 # permit_params :list, :of, :attributes, :on, :model
-#
+permit_params :name, :description, :banner_image, :city, :state, :country, :zipcode, :latitude, :longitude, :listing_category_id, :contact, :email, :website, :address, :fb_url, :linkedin_url, :twitter_url, :gplus_url
 # or
 #
 # permit_params do
