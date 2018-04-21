@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419125628) do
+ActiveRecord::Schema.define(version: 20180420132521) do
 
   create_table "accomadation_categories", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20180419125628) do
   create_table "accomodation_amenities", force: :cascade do |t|
     t.integer "accomodation_id"
     t.integer "amenity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "accomodation_customers", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "accomodation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -133,6 +140,13 @@ ActiveRecord::Schema.define(version: 20180419125628) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "listing_customers", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "listing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "listings", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -181,6 +195,15 @@ ActiveRecord::Schema.define(version: 20180419125628) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["place_category_id"], name: "index_places_on_place_category_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "reviewable_type"
+    t.integer "reviewable_id"
+    t.integer "customer_id"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

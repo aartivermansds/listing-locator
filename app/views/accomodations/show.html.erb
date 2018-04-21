@@ -26,15 +26,15 @@
                </li>
                <li>
                   <a href="#add-review" class="buttons btn-outlined medium add-review">
-                  <i class="fa fa-comments-o"></i>
-                  <span class="hidden-xs">Add review</span>
+                     <i class="fa fa-comments-o"></i>
+                     <span class="hidden-xs">Add review</span>
                   </a>
                </li>
                <li>
                   <a href="#" data-listing-id="74" data-nonce="01a769d424" class="buttons btn-outlined">
-                  <i class="fa fa-heart-o">
-                  </i>
-                  <span class="hidden-xs">Bookmark</span> 
+                     <i class="fa fa-heart-o">
+                     </i>
+                     <span class="hidden-xs">Bookmark</span> 
                   </a>
                </li>
             </ul>
@@ -63,8 +63,8 @@
                      <h3><%= @accomodation.name %></h3>
                      <div>
                         <a href="#listing-location" class="listing-address">
-                        <i class="ti-location-pin mrg-r-5"></i>
-                        <%= @accomodation.full_address %>
+                           <i class="ti-location-pin mrg-r-5"></i>
+                           <%= @accomodation.full_address %>
                         </a>
                         <div class="rating-box">
                            <div class="detail-list-rating">
@@ -266,112 +266,114 @@
                            <label>Adult</label>
                            <div class="input-group">
                               <span class="input-group-btn">
-                              <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                              <i class="fa fa-minus"></i>
-                              </button>
+                                 <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                    <i class="fa fa-minus"></i>
+                                 </button>
                               </span>
                               <input type="text" name="quant[1]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
                               <span class="input-group-btn">
-                              <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[1]">
-                              <i class="fa fa-plus"></i>
-                              </button>
-                              </span>
-                           </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                           <label>Children</label>
-                           <div class="input-group">
-                              <span class="input-group-btn">
+                                <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[1]">
+                                   <i class="fa fa-plus"></i>
+                                </button>
+                             </span>
+                          </div>
+                       </div>
+                       <div class="col-lg-6 col-md-12">
+                        <label>Children</label>
+                        <div class="input-group">
+                           <span class="input-group-btn">
                               <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[2]">
-                              <i class="fa fa-minus"></i>
+                                 <i class="fa fa-minus"></i>
                               </button>
-                              </span>
-                              <input type="text" name="quant[2]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
-                              <span class="input-group-btn">
-                              <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[2]">
-                              <i class="fa fa-plus"></i>
-                              </button>
-                              </span>
-                           </div>
-                        </div>
-                     </div>
-                     <a href="payment-method.html" class="btn reservation btn-radius theme-btn full-width mrg-top-10">Book Now</a>
-                  </div>
-               </div>
-               <!-- End: Book A Reservation -->
-               <!-- Start: Opening hour --><!-- End: Opening hour -->
-               <!-- Start: Listing Gallery -->
-               <div class="widget-boxed">
-                  <div class="widget-boxed-header">
-                     <h4><i class="ti-gallery padd-r-10"></i>Gallery</h4>
-                  </div>
-                  <div class="widget-boxed-body">
-                     <div class="side-list no-border gallery-box">
-                        <ul class="gallery-list">
-                           <% @accomodation.images.each do |image| %>
-                           <li>
-                              <%= link_to image.image_url, "data-fancybox" => "gallery" do %>
-                              <%= image_tag image.image_url, class: "img-responsive" %>
-                              <% end %>
-                           </li>
-                           <% end %>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-               <!-- End: Listing Gallery -->
-               <!-- Start: Latest Listing --><!-- End: Latest Listing -->
-               <!-- Start: Listing Category -->
-               <div class="widget-boxed">
-                  <div class="widget-boxed-header">
-                     <h4><i class="ti-briefcase padd-r-10"></i>Top Categories</h4>
-                  </div>
-                  <div class="widget-boxed-body padd-top-10 padd-bot-0">
-                     <div class="side-list">
-                        <ul class="category-list">
-                           <li><a href="#">Business <span class="badge bg-g">4</span></a></li>
-                           <li><a href="#">Shopping <span class="badge bg-a">7</span></a></li>
-                           <li><a href="#">Photography <span class="badge bg-d">10</span></a></li>
-                           <li><a href="#">Intertainment <span class="badge bg-l">55</span></a></li>
-                           <li><a href="#">Education <span class="badge bg-o">8</span></a></li>
-                           <li><a href="#">Travel & Tour <span class="badge bg-y">17</span></a></li>
-                           <li><a href="#">Health & Fitness <span class="badge bg-s">9</span></a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-               <!-- End: Listing Category -->
-               <!-- Start: Listing Location -->
-               <div class="widget-boxed">
-                  <div class="widget-boxed-header">
-                     <h4><i class="ti-location-pin padd-r-10"></i>Location</h4>
-                  </div>
-                  <div class="widget-boxed-body">
-                     <div class="side-list no-border">
-                        <ul>
-                           <li><i class="ti-location-pin padd-r-10"></i>171 Greenwich St QCH7</li>
-                           <li><i class="ti-mobile padd-r-10"></i>91 234 567 8765</li>
-                           <li><i class="ti-email padd-r-10"></i>suppoer@listinghub.com</li>
-                        </ul>
-                        <h5>Share Accomodation</h5>
-                        <ul class="side-list-inline no-border social-side">
-                           <li><a href="#"><i class="fa fa-facebook theme-cl"></i></a>
-                           </li>
-                           <li><a href="#"><i class="fa fa-google-plus theme-cl"></i></a></li>
-                           <li><a href="#"><i class="fa fa-twitter theme-cl"></i></a></li>
-                           <li><a href="#"><i class="fa fa-linkedin theme-cl"></i></a></li>
-                           <li><a href="#"><i class="fa fa-pinterest theme-cl"></i></a></li>
-                        </ul>
-                     </div>
-                  </div>
+                           </span>
+                           <input type="text" name="quant[2]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
+                           <span class="input-group-btn">
+                             <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[2]">
+                                <i class="fa fa-plus"></i>
+                             </button>
+                          </span>
+                       </div>
+                    </div>
+                 </div>
+                 <a href="payment-method.html" class="btn reservation btn-radius theme-btn full-width mrg-top-10">Book Now</a>
+              </div>
+           </div>
+           <!-- End: Book A Reservation -->
+           
+           
+           <!-- Start: Opening hour --><!-- End: Opening hour -->
+           <!-- Start: Listing Gallery -->
+           <div class="widget-boxed">
+            <div class="widget-boxed-header">
+               <h4><i class="ti-gallery padd-r-10"></i>Gallery</h4>
+            </div>
+            <div class="widget-boxed-body">
+               <div class="side-list no-border gallery-box">
+                  <ul class="gallery-list">
+                     <% @accomodation.images.each do |image| %>
+                     <li>
+                        <%= link_to image.image_url, "data-fancybox" => "gallery" do %>
+                        <%= image_tag image.image_url, class: "img-responsive" %>
+                        <% end %>
+                     </li>
+                     <% end %>
+                  </ul>
                </div>
             </div>
-            <!-- End: Listing Location -->
+         </div>
+         <!-- End: Listing Gallery -->
+         <!-- Start: Latest Listing --><!-- End: Latest Listing -->
+         <!-- Start: Listing Category -->
+         <div class="widget-boxed">
+            <div class="widget-boxed-header">
+               <h4><i class="ti-briefcase padd-r-10"></i>Top Categories</h4>
+            </div>
+            <div class="widget-boxed-body padd-top-10 padd-bot-0">
+               <div class="side-list">
+                  <ul class="category-list">
+                     <li><a href="#">Business <span class="badge bg-g">4</span></a></li>
+                     <li><a href="#">Shopping <span class="badge bg-a">7</span></a></li>
+                     <li><a href="#">Photography <span class="badge bg-d">10</span></a></li>
+                     <li><a href="#">Intertainment <span class="badge bg-l">55</span></a></li>
+                     <li><a href="#">Education <span class="badge bg-o">8</span></a></li>
+                     <li><a href="#">Travel & Tour <span class="badge bg-y">17</span></a></li>
+                     <li><a href="#">Health & Fitness <span class="badge bg-s">9</span></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <!-- End: Listing Category -->
+         <!-- Start: Listing Location -->
+         <div class="widget-boxed">
+            <div class="widget-boxed-header">
+               <h4><i class="ti-location-pin padd-r-10"></i>Location</h4>
+            </div>
+            <div class="widget-boxed-body">
+               <div class="side-list no-border">
+                  <ul>
+                     <li><i class="ti-location-pin padd-r-10"></i>171 Greenwich St QCH7</li>
+                     <li><i class="ti-mobile padd-r-10"></i>91 234 567 8765</li>
+                     <li><i class="ti-email padd-r-10"></i>suppoer@listinghub.com</li>
+                  </ul>
+                  <h5>Share Accomodation</h5>
+                  <ul class="side-list-inline no-border social-side">
+                     <li><a href="#"><i class="fa fa-facebook theme-cl"></i></a>
+                     </li>
+                     <li><a href="#"><i class="fa fa-google-plus theme-cl"></i></a></li>
+                     <li><a href="#"><i class="fa fa-twitter theme-cl"></i></a></li>
+                     <li><a href="#"><i class="fa fa-linkedin theme-cl"></i></a></li>
+                     <li><a href="#"><i class="fa fa-pinterest theme-cl"></i></a></li>
+                  </ul>
+               </div>
+            </div>
          </div>
       </div>
-      <!-- End: Sidebar Start -->
+      <!-- End: Listing Location -->
    </div>
-   </div>
+</div>
+<!-- End: Sidebar Start -->
+</div>
+</div>
 </section>
 </div>
 <!-- Google-map -->
@@ -379,67 +381,67 @@
 <script src="assets/js/gmap3.min.js"></script>
 <script type="text/javascript">
    $('#map_full_width_one').gmap3({
-    map: {
-     options: {
-      zoom: 5,
-      center: [<%= @accomodation.latitude %>, <%= @accomodation.longitude %>],
-      mapTypeControl: true,
-      mapTypeControlOptions: {
-       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-     },
-     mapTypeId: "style1",
-     mapTypeControlOptions: {
-       mapTypeIds: [google.maps.MapTypeId.ROADMAP, "style1"]
-     },
-     navigationControl: true,
-     scrollwheel: false,
-     streetViewControl: true
-   }
-   },
-   marker: {
+     map: {
+       options: {
+         zoom: 5,
+         center: [<%= @accomodation.latitude %>, <%= @accomodation.longitude %>],
+         mapTypeControl: true,
+         mapTypeControlOptions: {
+           style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+        },
+        mapTypeId: "style1",
+        mapTypeControlOptions: {
+           mapTypeIds: [google.maps.MapTypeId.ROADMAP, "style1"]
+        },
+        navigationControl: true,
+        scrollwheel: false,
+        streetViewControl: true
+     }
+  },
+  marker: {
    latLng: [<%= @accomodation.latitude %>, <%= @accomodation.longitude %>],
    options: {animation:google.maps.Animation.BOUNCE, icon: '<%= asset_path("marker.png")%>' }
-   },
-   styledmaptype: {
+},
+styledmaptype: {
    id: "style1",
    options: {
-    name: "Style 1"
-   },
-   
-   }
-   });
+     name: "Style 1"
+  },
+  
+}
+});
    
 </script>
 <script type="text/javascript">
    $("[data-fancybox]").fancybox({
                // Options will go here
-             });
-           
-</script>
-<!-- Date Dropper Script-->
-<script>
-   $('#reservation-date').dateDropper();
-</script>
-<!-- Time Dropper Script-->
-<script>
-   this.$('#reservation-time').timeDropper({
-    setCurrentTime: false,
-    meridians: true,
-    primaryColor: "#e8212a",
-    borderColor: "#e8212a",
-    minutesInterval: '15'
-   });
-</script>
-<!-- Rating Script -->
-<script>
-   $('.rating-opt').start(function(cur){
-     console.log(cur);
-     $('#info').text(cur);
-   });
-</script>
-</div>
-<style type="text/css">
+            });
+   
+         </script>
+         <!-- Date Dropper Script-->
+         <script>
+            $('#reservation-date').dateDropper();
+         </script>
+         <!-- Time Dropper Script-->
+         <script>
+            this.$('#reservation-time').timeDropper({
+              setCurrentTime: false,
+              meridians: true,
+              primaryColor: "#e8212a",
+              borderColor: "#e8212a",
+              minutesInterval: '15'
+           });
+        </script>
+        <!-- Rating Script -->
+        <script>
+         $('.rating-opt').start(function(cur){
+          console.log(cur);
+          $('#info').text(cur);
+       });
+    </script>
+ </div>
+ <style type="text/css">
    .accomodation-list-img img {
-   height:100px;
+      height:100px;
    }
 </style>

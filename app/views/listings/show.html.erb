@@ -214,34 +214,25 @@
             </div>
             <div class="detail-wrapper">
                <div class="detail-wrapper-header">
-                  <h4>Rate & Write Reviews</h4>
+                  <h4>Write Reviews</h4>
                </div>
                <div class="detail-wrapper-body">
-                  <div class="row mrg-bot-10">
-                     <div class="col-md-12">
-                        <div class="rating-opt">
-                           <div   class="jr-ratenode jr-nomal"></div>
-                           <div   class="jr-ratenode jr-nomal "></div>
-                           <div   class="jr-ratenode jr-nomal "></div>
-                           <div   class="jr-ratenode jr-nomal "></div>
-                           <div   class="jr-ratenode jr-nomal "></div>
+                  <%= form_for :review, url: :root, method: :get do |f| %>
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <%= f.text_field :name, class: "form-control", placeholder: "Your Name*" %>
+                        </div>
+                        <div class="col-sm-6">
+                           <%= f.email_field :email, class: "form-control", placeholder: "Email Address*" %>
+                        </div>
+                        <div class="col-sm-12">
+                           <%= f.text_area :message, class: "form-control height-110", placeholder: "Tell us your experience..."%>
+                        </div>
+                        <div class="col-sm-12">
+                           <%= f.submit "Submit your review", class: "btn theme-btn" %>
                         </div>
                      </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-sm-6">
-                        <input type="text" class="form-control" placeholder="Your Name*">
-                     </div>
-                     <div class="col-sm-6">
-                        <input type="email" class="form-control" placeholder="Email Address*">
-                     </div>
-                     <div class="col-sm-12">
-                        <textarea class="form-control height-110" placeholder="Tell us your experience..."></textarea>
-                     </div>
-                     <div class="col-sm-12">
-                        <button type="button" class="btn theme-btn">Submit your review</button>
-                     </div>
-                  </div>
+                  <% end %>
                </div>
             </div>
          </div>

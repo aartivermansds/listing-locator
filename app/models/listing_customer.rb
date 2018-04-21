@@ -1,0 +1,2 @@
+class ListingCustomer < ApplicationRecord
+end

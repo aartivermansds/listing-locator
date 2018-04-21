@@ -8,6 +8,8 @@ class Listing < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode
 
+  has_many :reviews, as: :reviewable 
+
   mount_uploader :banner_image, ImageUploader
 
   accepts_nested_attributes_for :working_hours, reject_if: :all_blank, allow_destroy: true
